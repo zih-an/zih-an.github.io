@@ -39,3 +39,7 @@ $ hexo deploy
 ```
 
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+
+### 全局吸底音乐播放
+主要问题：aplayer.pug引用的meting.js文件没有no-destory，将以下代码复制到本地，改为引用本地的meting.js
+(Meting.js地址)[https://github.com/metowolf/MetingJS/blob/v1.2/src/Meting.js]
