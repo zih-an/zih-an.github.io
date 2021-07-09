@@ -4,16 +4,16 @@
 
 # Site
 title: ZHAO.Z
-subtitle: ''
-description: ''
-keywords:
+subtitle: 'Life with Study'
+description: "Zihan's Blog: Life with Study"
+keywords: 
 author: ZHAO Z
 language: [zh-CN,en]
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://example.com
+url: http://zzhao.plus
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
