@@ -2,7 +2,7 @@
 title: 如果能回到...？
 tags: [Essays]
 categories:
-  - [感悟]
+  - [随笔]
 date: 2021-06-15 01:59:53
 description: 小小的感悟 to stay positive, still.
 cover: bgimg.jpg
