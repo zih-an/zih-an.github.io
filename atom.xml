@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ZHAO.Z</title>
+  <icon>http://zzhao.plus/icon.png</icon>
+  <subtitle>Life with Study</subtitle>
+  <link href="http://zzhao.plus/atom.xml" rel="self"/>
+  
+  <link href="http://zzhao.plus/"/>
+  <updated>2022-04-14T18:00:40.779Z</updated>
+  <id>http://zzhao.plus/</id>
+  
+  <author>
+    <name>ZHAO Z</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>研究的研究（二）：论文，文献</title>
+    <link href="http://zzhao.plus/2022/04/13/research-intro-2/"/>
+    <id>http://zzhao.plus/2022/04/13/research-intro-2/</id>
+    <published>2022-04-12T18:33:26.000Z</published>
+    <updated>2022-04-14T18:00:40.779Z</updated>
+    
+    
+    <summary type="html">论文是研究成果的展现方式，文献是做研究的必备工具。重要！</summary>
+    
+    
+    
+    <category term="研究研究" scheme="http://zzhao.plus/categories/%E7%A0%94%E7%A9%B6%E7%A0%94%E7%A9%B6/"/>
+    
+    
+    <category term="Research" scheme="http://zzhao.plus/tags/Research/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>研究的研究（一）：什么是科学研究？</title>
+    <link href="http://zzhao.plus/2022/03/26/research-intro/"/>
+    <id>http://zzhao.plus/2022/03/26/research-intro/</id>
+    <published>2022-03-25T16:19:07.000Z</published>
+    <updated>2022-04-13T19:20:07.628Z</updated>
+    
+    
+    <summary type="html">科研 = 科学 + 研究。那，什么是科学？什么是研究？</summary>
+    
+    
+    
+    <category term="研究研究" scheme="http://zzhao.plus/categories/%E7%A0%94%E7%A9%B6%E7%A0%94%E7%A9%B6/"/>
+    
+    
+    <category term="Research" scheme="http://zzhao.plus/tags/Research/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人生的下一步 2022</title>
+    <link href="http://zzhao.plus/2022/03/20/next-step-2022/"/>
+    <id>http://zzhao.plus/2022/03/20/next-step-2022/</id>
+    <published>2022-03-20T13:32:19.000Z</published>
+    <updated>2022-03-28T12:51:33.648Z</updated>
+    
+    
+    <summary type="html">the next step -- burning ↑</summary>
+    
+    
+    
+    <category term="随笔" scheme="http://zzhao.plus/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="Essays" scheme="http://zzhao.plus/tags/Essays/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Calculus</title>
+    <link href="http://zzhao.plus/2021/07/14/Calculus/"/>
+    <id>http://zzhao.plus/2021/07/14/Calculus/</id>
+    <published>2021-07-14T06:24:35.000Z</published>
+    <updated>2022-03-20T19:53:02.823Z</updated>
+    
+    
+    <summary type="html">Calculus for graduate study.</summary>
+    
+    
+    
+    <category term="专业基础" scheme="http://zzhao.plus/categories/%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="ML" scheme="http://zzhao.plus/tags/ML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如果能回到...？</title>
+    <link href="http://zzhao.plus/2021/06/15/if-i-can-go-back/"/>
+    <id>http://zzhao.plus/2021/06/15/if-i-can-go-back/</id>
+    <published>2021-06-14T17:59:53.000Z</published>
+    <updated>2022-03-28T12:51:46.219Z</updated>
+    
+    
+    <summary type="html">小小的感悟 to stay positive, still.</summary>
+    
+    
+    
+    <category term="随笔" scheme="http://zzhao.plus/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="Essays" scheme="http://zzhao.plus/tags/Essays/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习知识点</title>
+    <link href="http://zzhao.plus/2021/01/05/Maching-Learning/"/>
+    <id>http://zzhao.plus/2021/01/05/Maching-Learning/</id>
+    <published>2021-01-05T11:21:53.000Z</published>
+    <updated>2022-03-20T19:53:02.839Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="专业基础" scheme="http://zzhao.plus/categories/%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="ML" scheme="http://zzhao.plus/tags/ML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Operating System</title>
+    <link href="http://zzhao.plus/2021/01/05/Operating-System/"/>
+    <id>http://zzhao.plus/2021/01/05/Operating-System/</id>
+    <published>2021-01-04T18:06:18.000Z</published>
+    <updated>2022-03-20T19:53:02.839Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="专业基础" scheme="http://zzhao.plus/categories/%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>可视化技术知识点</title>
+    <link href="http://zzhao.plus/2021/01/04/Visualization/"/>
+    <id>http://zzhao.plus/2021/01/04/Visualization/</id>
+    <published>2021-01-04T08:21:17.000Z</published>
+    <updated>2022-03-20T19:53:02.839Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="专业基础" scheme="http://zzhao.plus/categories/%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="Visualization" scheme="http://zzhao.plus/tags/Visualization/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机图形学知识点</title>
+    <link href="http://zzhao.plus/2021/01/03/Computer-Graphics/"/>
+    <id>http://zzhao.plus/2021/01/03/Computer-Graphics/</id>
+    <published>2021-01-03T14:58:16.000Z</published>
+    <updated>2022-03-20T19:53:02.839Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="专业基础" scheme="http://zzhao.plus/categories/%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="CG" scheme="http://zzhao.plus/tags/CG/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法导论知识点</title>
+    <link href="http://zzhao.plus/2021/01/03/Introduction-To-Algorithm/"/>
+    <id>http://zzhao.plus/2021/01/03/Introduction-To-Algorithm/</id>
+    <published>2021-01-03T14:34:47.000Z</published>
+    <updated>2022-03-20T19:53:02.839Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="专业基础" scheme="http://zzhao.plus/categories/%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="算法" scheme="http://zzhao.plus/categories/%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="Algorithm" scheme="http://zzhao.plus/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo: Hello World</title>
+    <link href="http://zzhao.plus/2021/01/03/hello-world/"/>
+    <id>http://zzhao.plus/2021/01/03/hello-world/</id>
+    <published>2021-01-03T08:54:12.915Z</published>
+    <updated>2021-01-04T07:10:44.466Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Hexo" scheme="http://zzhao.plus/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>
