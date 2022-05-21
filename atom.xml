@@ -6,7 +6,7 @@
   <link href="http://zzhao.plus/atom.xml" rel="self"/>
   
   <link href="http://zzhao.plus/"/>
-  <updated>2022-04-15T07:08:11.155Z</updated>
+  <updated>2022-05-21T14:11:30.026Z</updated>
   <id>http://zzhao.plus/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>开发综述 Dev Overview</title>
+    <link href="http://zzhao.plus/2022/05/21/DevOverview/"/>
+    <id>http://zzhao.plus/2022/05/21/DevOverview/</id>
+    <published>2022-05-21T12:37:07.000Z</published>
+    <updated>2022-05-21T14:11:30.026Z</updated>
+    
+    
+    <summary type="html">这是开发的Big Picture，也是对CS的概览性认知~</summary>
+    
+    
+    
+    <category term="技术" scheme="http://zzhao.plus/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>研究的研究（二）：论文，文献</title>
