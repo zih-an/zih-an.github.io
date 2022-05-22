@@ -6,7 +6,7 @@
   <link href="http://zzhao.plus/atom.xml" rel="self"/>
   
   <link href="http://zzhao.plus/"/>
-  <updated>2022-05-21T17:31:23.006Z</updated>
+  <updated>2022-05-22T15:45:38.728Z</updated>
   <id>http://zzhao.plus/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://zzhao.plus/2022/05/21/DevOverview/"/>
     <id>http://zzhao.plus/2022/05/21/DevOverview/</id>
     <published>2022-05-21T12:37:07.000Z</published>
-    <updated>2022-05-21T17:31:23.006Z</updated>
+    <updated>2022-05-22T15:45:38.728Z</updated>
     
     
     <summary type="html">这是开发的Big Picture，也是对CS的概览性认知~</summary>
@@ -87,25 +87,6 @@
     
     
     <category term="Essays" scheme="http://zzhao.plus/tags/Essays/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Calculus</title>
-    <link href="http://zzhao.plus/2021/07/14/Calculus/"/>
-    <id>http://zzhao.plus/2021/07/14/Calculus/</id>
-    <published>2021-07-14T06:24:35.000Z</published>
-    <updated>2022-03-20T19:53:02.823Z</updated>
-    
-    
-    <summary type="html">Calculus for graduate study.</summary>
-    
-    
-    
-    <category term="专业基础" scheme="http://zzhao.plus/categories/%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="ML" scheme="http://zzhao.plus/tags/ML/"/>
     
   </entry>
   
