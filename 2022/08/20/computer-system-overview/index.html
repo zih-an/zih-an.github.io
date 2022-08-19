@@ -1,0 +1,1426 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>计算机系统基本 Computer System | ZHAO.Z</title><meta name="author" content="ZHAO Z"><meta name="copyright" content="ZHAO Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="这是整个计算机系统的综述，从计组出发，基本建立了操作系统、编译原理、少量计网和体系结构的感性认知">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机系统基本 Computer System">
+<meta property="og:url" content="http://zzhao.plus/2022/08/20/computer-system-overview/index.html">
+<meta property="og:site_name" content="ZHAO.Z">
+<meta property="og:description" content="这是整个计算机系统的综述，从计组出发，基本建立了操作系统、编译原理、少量计网和体系结构的感性认知">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://zzhao.plus/2022/08/20/computer-system-overview/computer-components.jpg">
+<meta property="article:published_time" content="2022-08-19T16:15:35.000Z">
+<meta property="article:modified_time" content="2022-08-19T16:32:53.248Z">
+<meta property="article:author" content="ZHAO Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zzhao.plus/2022/08/20/computer-system-overview/computer-components.jpg"><link rel="shortcut icon" href="/images/pencil.png"><link rel="canonical" href="http://zzhao.plus/2022/08/20/computer-system-overview/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-20 00:32:53'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><style type="text/css">#toggle-sidebar {bottom: 80px}</style><style type="text/css">.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body{left:-66px!important}.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover{left:0!important}</style><link rel="stylesheet" href="/css/background.css" /><link rel="stylesheet" href="APlayer.min.css"><div id="aplayer"></div><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" async></script><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="ZHAO.Z" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/images/profile.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-newspaper"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> → 分类</span></a></li><li><a class="site-page" href="/categories/%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/"><i class="fa-fw fas fa-university"></i><span> 专业基础</span></a></li><li><a class="site-page" href="/categories/%E7%A0%94%E7%A9%B6%E7%A0%94%E7%A9%B6/"><i class="fa-fw fas fa-book"></i><span> 研究研究</span></a></li><li><a class="site-page" href="/categories/%E6%8A%80%E6%9C%AF/"><i class="fa-fw fas fa-laptop-code"></i><span> 技术</span></a></li><li><a class="site-page" href="/categories/%E9%9A%8F%E7%AC%94/"><i class="fa-fw fas fa-coffee"></i><span> 随笔</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/pieces/"><i class="fa-fw fas fa-comment"></i><span> 啰里啰嗦</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/2022/08/20/computer-system-overview/computer-components.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ZHAO.Z</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-newspaper"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> → 分类</span></a></li><li><a class="site-page" href="/categories/%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/"><i class="fa-fw fas fa-university"></i><span> 专业基础</span></a></li><li><a class="site-page" href="/categories/%E7%A0%94%E7%A9%B6%E7%A0%94%E7%A9%B6/"><i class="fa-fw fas fa-book"></i><span> 研究研究</span></a></li><li><a class="site-page" href="/categories/%E6%8A%80%E6%9C%AF/"><i class="fa-fw fas fa-laptop-code"></i><span> 技术</span></a></li><li><a class="site-page" href="/categories/%E9%9A%8F%E7%AC%94/"><i class="fa-fw fas fa-coffee"></i><span> 随笔</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/pieces/"><i class="fa-fw fas fa-comment"></i><span> 啰里啰嗦</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">计算机系统基本 Computer System</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-19T16:15:35.000Z" title="发表于 2022-08-20 00:15:35">2022-08-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-19T16:32:53.248Z" title="更新于 2022-08-20 00:32:53">2022-08-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/">专业基础</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>为了装一台自己的主机形式个人PC，需要对硬件设备进行彻底了解。同时，学计组、体系结构、操作系统等还是得知道到底是组了个什么东西、干了些什么实际的事情，别当电脑盲。</p>
+<p>本文综合了文本、视频等各种网络资料，结合部分cs课堂内容，从practice层面叙述了整个计算机系统。</p>
+<h1 id="0-计算机基本"><a class="markdownIt-Anchor" href="#0-计算机基本"></a> 0 计算机基本</h1>
+<img src="./basic-logic.JPG" width="500" />
+<p>包含硬件（Hardware）、固件（Firmware）、软件（Software）</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1717199035433133685&amp;wfr=spider&amp;for=pc">三者的区别</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36412715/article/details/84105410?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-1-84105410-blog-113184237.pc_relevant_vip_default&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-1-84105410-blog-113184237.pc_relevant_vip_default&amp;utm_relevant_index=1">固件和驱动</a></li>
+</ul>
+<blockquote>
+<p>本文主要集中于硬件部分知识，涉及少许固件、软件部分。并且，本文并不深入介绍原理，只肤浅地从看得见、摸得着的硬件设备出发进行介绍，什么多核、并行的，也是从实践角度触发感知。一些深入的书籍：</p>
+<ul>
+<li>唐朔飞 计组</li>
+<li>袁春风 计算机系统基础</li>
+<li>cmu 深入理解计算机系统</li>
+<li>《计算机组成与设计：硬件 / 软件接口》</li>
+<li>编码的奥秘</li>
+<li>《计算机是怎样跑起来的》</li>
+<li>《程序是怎样跑起来的》</li>
+</ul>
+</blockquote>
+<h2 id="01-硬件-hardware"><a class="markdownIt-Anchor" href="#01-硬件-hardware"></a> 0.1 硬件 Hardware</h2>
+<p>硬件是指计算机系统中由电子，机械和光电元件等组成的各种物理装置的总称。这些物理装置按系统结构的要求构成一个有机整体为计算机软件运行提供物质基础。</p>
+<h3 id="自己装一台主机的基本组成部分"><a class="markdownIt-Anchor" href="#自己装一台主机的基本组成部分"></a> 自己装一台主机的基本组成部分</h3>
+<ul>
+<li>主板 Motherboard</li>
+<li>中央处理器 CPU（Central Processing Unit）</li>
+<li>内存 Memory</li>
+<li>硬盘
+<ul>
+<li>固态硬盘 SSD（Solid State Disk 或 Solid State Drive）</li>
+<li>机械硬盘 HDD（Hard Disk Drive）
+<ul>
+<li>是可以没有SSD的，但是因为HDD速度慢，所以系统盘一般都要SSD</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>电源 Power Supply/Source</li>
+<li>GPU（Graphics Processing Unit）
+<ul>
+<li>显卡（Video card 或 Graphics card）：核心部分是GPU</li>
+<li>集显：与CPU一同封装的GPU</li>
+</ul>
+</li>
+<li>散热 Coolers
+<ul>
+<li>风冷 Air Coolers</li>
+<li>水冷 Liquid Coolers</li>
+</ul>
+</li>
+<li>机箱 Cases</li>
+</ul>
+<h3 id="其他硬件外设-peripherals"><a class="markdownIt-Anchor" href="#其他硬件外设-peripherals"></a> 其他硬件外设 peripherals</h3>
+<blockquote>
+<p>造成部分认知的冲突，是现在的主板、CPU等集成度越来越高，导致一些原本的“外设”都装进去了，同时GPU本身被CPU控制又与CPU有类似结构。</p>
+<p>这一块主要还是参考教材的论述，还是按冯诺依曼的部件区分：</p>
+<ul>
+<li>《计组》——唐朔飞，第9页：CPU和主存合称为主机，IO可称为外部设备</li>
+<li>《计组》——唐朔飞，第5章I/O</li>
+</ul>
+<p>参考<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Computer">wikipedia: computer</a>，显卡、声卡等等，它就是外设！</p>
+</blockquote>
+<ul>
+<li>机箱内部的，主机都不是外设
+<ul>
+<li>CPU和主板、内存、电源 不是外设</li>
+<li>散热既不是外设，也不是内设，它就不是计算机的一个部分</li>
+</ul>
+</li>
+<li>通过主板IO接口连接的输入输出设备，都是外设
+<ul>
+<li>鼠标、键盘、显示器、摄像头</li>
+<li>光盘、u盘、硬盘等外存</li>
+<li>打印机、扫描仪</li>
+<li>调制解调器等</li>
+<li>网卡、声卡、显卡 都是外设
+<ul>
+<li>声卡显卡是输出，网卡属于双工</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="服务器企业级"><a class="markdownIt-Anchor" href="#服务器企业级"></a> 服务器（企业级）</h3>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8/100571?fr=aladdin">百度百科</a></p>
+<blockquote>
+<p>简而言之，一般通过网络，为用户提供更丰富、复杂的服务。比如多块CPU、多块GPU的算力支持，而个人PC一般是默认单GPU，但是本质上服务器与普通计算机的结构相差不大。</p>
+</blockquote>
+<h2 id="02-固件-firmware"><a class="markdownIt-Anchor" href="#02-固件-firmware"></a> 0.2 固件 Firmware</h2>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%9B%BA%E4%BB%B6/627829?fr=aladdin">from. 百度百科</a>：</p>
+<p>固件是指设备内部保存的设备“驱动程序”，通过固件，操作系统才能按照标准的设备驱动实现特定机器的运行动作，比如光驱、刻录机等都有内部固件。</p>
+<p>固件是担任着一个系统最基础最底层工作的软件。而在硬件设备中，固件就是硬件设备的灵魂，因为一些硬件设备除了固件以外没有其它软件组成，因此固件也就决定着硬件设备的功能及性能。</p>
+<blockquote>
+<p>是直接运行在硬件上的，一般写在非易失性存储器中，例如ROM、EPROM、EEPROM。<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Firmware">wikipedia-firmware</a></p>
+</blockquote>
+<h3 id="实例"><a class="markdownIt-Anchor" href="#实例"></a> 实例</h3>
+<ul>
+<li>主板的 Bios（Basic Input/Output System）
+<ul>
+<li>为硬件烧录固件，固件也属于编程范围</li>
+</ul>
+</li>
+<li>键盘等的硬件都会有固件部分</li>
+</ul>
+<h2 id="03-软件-software"><a class="markdownIt-Anchor" href="#03-软件-software"></a> 0.3 软件 Software</h2>
+<p>在硬件、固件之上</p>
+<ul>
+<li>系统软件 System Software
+<ul>
+<li>操作系统 Operating System</li>
+<li>数据库 Database</li>
+<li>驱动 Drivers
+<ul>
+<li>让os联系硬件，并且让硬件知道自己该干嘛</li>
+<li>OS里都会预装很多的<em>兼容驱动</em>，大部分硬件比如常用的鼠标、键盘等都能直接用。以windows为例，打开<code>C:\Windows\System32\drivers</code></li>
+<li><em>适配驱动</em>：主板驱动、外设驱动</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>应用软件 Application Software</li>
+</ul>
+<h2 id="04-逻辑总结"><a class="markdownIt-Anchor" href="#04-逻辑总结"></a> 0.4 逻辑总结</h2>
+<ol>
+<li>指令集是预先拟定的，各个模块的硬件电路0/1（机器语言）负责实现这个指令集，并抽象成人类能理解的汇编语言
+<ul>
+<li>汇编语言是机器相关的</li>
+<li>计算机的本质就是存储器存储这些码，然后一条一条读取、执行</li>
+<li>每一个硬件的接口，一定有对应的指令可以用~</li>
+</ul>
+</li>
+<li>bios预先烧录在主板上的固件，操作系统是建立在此基础上的软件
+<ul>
+<li>开机一定是bios最先启动，它负责装载操作系统（引导之类的）。boot启动</li>
+<li>早期操作系统就是汇编写的（机器相关的代码），后期有了C语言等高级语言，开始了正向的迭代发展。同理，bios怎么写的？答：机器码（汇编）控制硬件及接口。</li>
+<li>操作系统是硬件相关的（指令集），一般是不同的芯片就不会略有不同</li>
+</ul>
+</li>
+<li>g++/gcc能将C/C++代码编译成汇编语言，由汇编器转为机器语言，再由链接器链接代码
+<ul>
+<li>编译器是操作系统相关的，也就是机器相关的。C语言写出来的程序，无法“二进制跨平台”，但是语言本身是一致的</li>
+<li>早期的编译器由操作系统提供，后来就变成自己去下载</li>
+<li>所谓“机器无关”的语言，比如Java等解释型都有自己的解释器，不过这玩意儿也是操作系统相关的</li>
+</ul>
+</li>
+<li>显示器看到的图形化东西属于外设的范畴，可以单独进行了解</li>
+<li>一条指令的执行速度？时钟周期？</li>
+</ol>
+<h3 id="硬件不同"><a class="markdownIt-Anchor" href="#硬件不同"></a> 硬件不同</h3>
+<ul>
+<li>意味着二进制、机器码不同</li>
+<li>意味着汇编代码不同</li>
+<li>意味着操作系统方法的实现不同</li>
+<li>意味着不同操作系统的所有都不同</li>
+</ul>
+<p>换言之，表面看上去的“相同”，比如所谓的平台无关，核心都是有关的。只不过因为封装了底层的东西，人只能操作表层抽象出来的“相同”的东西，所以无关，但同时也就带来了“效率”问题。</p>
+<p>而在一个新的硬件平台上进行开发，想用“高级”语言，一定有硬件厂商提供的外部工具。比如switch、苹果电脑、VR头显等设备，一定有开发的接口，甚至这些设备还可能有自己的操作系统。</p>
+<h2 id="05-关于一些其他问题的博客"><a class="markdownIt-Anchor" href="#05-关于一些其他问题的博客"></a> 0.5 关于一些其他问题的博客</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2013/02/booting.html">计算机是如何启动的？ ——阮一峰</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/22364502">按下开机键后，电脑都干了些什么？ ——知乎</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/23474438">处理器架构、指令集和汇编语言，三者有何关系？ ——知乎</a>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/a351945755/article/details/21536789">操作系统与CPU的指令集的关系是怎样的？</a>
+<ul>
+<li>LINUX：各种CPU架构都可以跑</li>
+<li>WINDOWS： 只支持X86指令集， WINDOWS RT只支持ARM指令集</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/388277841">M1是怎么兼容x86的？MacBook是否会有软件兼容性问题？</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.quora.com/What-are-pixels-in-an-LCD-screen-made-up-of-and-how-do-they-change-their-colors-according-to-the-color-of-the-image-displayed-in-the-LCD-screen">LCD显示器</a>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.google.com/search?newwindow=1&amp;sxsrf=ALiCzsbaFdrsFMbASwWvA0XAbphOsbadfg:1660252214935&amp;source=univ&amp;tbm=isch&amp;q=what+does+a+pixel+look+like&amp;fir=sgU5yi-Pr6QK5M%252CQ80AI9lS3M5HcM%252C_%253BQZpiS0KLmy37dM%252CCch7gGGQHE8OlM%252C_%253BPKoZDYVDhdgkPM%252CQ80AI9lS3M5HcM%252C_%253Bguf2cIuoJTzbAM%252ChIEFnLBb8g3CSM%252C_%253BzIS9CCdJ1ayCaM%252ClkTP2co5EaaDAM%252C_%253BmqOUa1fXKxtzBM%252CCch7gGGQHE8OlM%252C_%253B_Zu0lY1B2pQf2M%252CNvbp6YVp2mqBHM%252C_%253BFp7DwNTdqe2pbM%252CYwwNMkmBhyChnM%252C_%253BVVD8JD_uTsLZWM%252CbLBqTCOE1nbyDM%252C_%253BZ1WkXn6z-whHsM%252CC7s-t4wCLieWKM%252C_%253BWwwMjpmaNKf7vM%252ClYidAKugRMzm5M%252C_%253BzZyIRfJ8uF8O-M%252CKhjH19KERiR4bM%252C_&amp;usg=AI4_-kS3za-Bqnj_wdpkx2lnJLLYFl7Lbw&amp;sa=X&amp;ved=2ahUKEwi03Yi82b_5AhX1SGwGHfszD_8Q7Al6BAgCEE4&amp;biw=1280&amp;bih=577&amp;dpr=1.5">what does a pixel look like</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=0B79dGR19Tg">How pixels work</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.hxdtekf.com/article/1031.html">LCD如何实现彩色显示</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.dragonlcm.com/18851.html">液晶显示器的背光源</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="http://t.zoukankan.com/xinfengzi-p-5967458.html">单片机、CPU、指令集和操作系统的关系</a>
+<ul>
+<li>想进一步理解深层次原理，得从单片机开始。用单片机理解计算机系统。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/61813935/answer/1743640352">switch有操作系统吗？</a>
+<ul>
+<li>有。甚至steam出的steam deck，能跑steamOS也能跑windows10</li>
+</ul>
+</li>
+<li>存储器是如何存储的？——锁存器
+<ul>
+<li>固件是如何被烧录的？</li>
+<li>操作系统如何运行在主板上？</li>
+</ul>
+</li>
+<li>无线信号如蓝牙、wifi等是如何传输并接收的？</li>
+<li>电源是如何工作的？传感器等又是如何制造的？</li>
+</ul>
+<h3 id="解答上述问题需要学习的内容本文不深入"><a class="markdownIt-Anchor" href="#解答上述问题需要学习的内容本文不深入"></a> 解答上述问题需要学习的内容（本文不深入）</h3>
+<ul>
+<li>数字电路/模拟电路</li>
+<li>计算机组成与原理</li>
+<li>操作系统</li>
+<li>体系结构</li>
+<li>微机原理</li>
+<li>通信原理：无线、微波等</li>
+</ul>
+<blockquote>
+<p>电子信息和通信的部分可以慢慢看，当个兴趣爱好就行。对自己的定位仍然是cg.</p>
+</blockquote>
+<h1 id="1-主板-motherboard"><a class="markdownIt-Anchor" href="#1-主板-motherboard"></a> 1 主板 Motherboard</h1>
+<blockquote>
+<ul>
+<li>重点参考：<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Motherboard">wikipedia</a></li>
+<li><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%B8%BB%E6%9D%BF/104636?fr=aladdin">百度百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=b2pd3Y6aBag">一个YouTube视频</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/449507475">知乎文章</a></li>
+</ul>
+</blockquote>
+<p>一些名词，也是主板的组成部分：</p>
+<ul>
+<li>cpu socket</li>
+<li>memory slots</li>
+<li>bus slots：显卡、声卡、网卡都在这里安装</li>
+<li>SATA connecters</li>
+<li>M.2 slot</li>
+<li>modern: platform controller hub</li>
+<li>old: chipset
+<ul>
+<li>北桥 north bridge：链接cpu、ram、bus</li>
+<li>南桥 south bridge</li>
+</ul>
+</li>
+<li>IO interfaces
+<ul>
+<li>USB（Universal Serial Bus）</li>
+<li>Type-C（USB Type-C）</li>
+<li>Video Adapter
+<ul>
+<li>Integrated Video</li>
+<li>DVI</li>
+<li>VGA</li>
+<li>HDMI</li>
+<li>DisplayPort</li>
+</ul>
+</li>
+<li>network interface card：以太网RJ-45</li>
+<li>integrated sound card</li>
+</ul>
+</li>
+<li>PSC (Power Supply Connector)</li>
+<li>ATX, microATX</li>
+<li>Printed Circuit Board (PCB) 印制电路板</li>
+</ul>
+<h2 id="11-主板基础结构"><a class="markdownIt-Anchor" href="#11-主板基础结构"></a> 1.1 主板基础结构</h2>
+<p>（等我买主板了，拍个照片标注一下放在这里~</p>
+<p>现代的计算机主板一般包括：</p>
+<ul>
+<li>CPU插槽 CPU sockets/slots
+<ul>
+<li>一般购买是 板+u 配套</li>
+</ul>
+</li>
+<li>内存插槽 memory slots：主存安装的地方
+<ul>
+<li>通常以包含DRAM芯片的DIMM模式，DDR3、DDR4、DDR5或者板载LPDDRx</li>
+</ul>
+</li>
+<li>芯片组 chipset
+<ul>
+<li>形成CPU、主存、外设总线的接口</li>
+</ul>
+</li>
+<li>非易失性存储芯片 Non-volatile memory chips
+<ul>
+<li>ROM, EPROM, EEPROM, NOR flash</li>
+<li>存储了系统的固件，bios。初始化硬件设备、加载操作系统</li>
+</ul>
+</li>
+<li>时钟发生器 clock generator</li>
+<li>电源连接口</li>
+<li>扩展卡插槽 slots for expansion cards</li>
+<li>硬盘的连接器
+<ul>
+<li>SATA、NVMe</li>
+</ul>
+</li>
+<li>其他：USB等</li>
+</ul>
+<h3 id="细节"><a class="markdownIt-Anchor" href="#细节"></a> 细节</h3>
+<h4 id="pcie"><a class="markdownIt-Anchor" href="#pcie"></a> PCIe</h4>
+<p>PCIe (Peripheral Component Interconnect Express) 是一种高速串行计算机扩展总线标准</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/PCIE">PCIe百度百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/PCI_Express">PCIe wikipedia</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26172972">深入了解PCI/PCIe</a></li>
+</ul>
+<p>各种“卡”，都需要插在这个接口上。作为扩展接口，它主要用于外围设备的连接和扩展。</p>
+<p>pcie插槽只有最长的两根才能接显卡。其他短的基本是用来接无线网卡、蓝牙、声卡、采集卡等设备。主板越高端、pcie插槽越多、代表主板的扩展性越丰富。e-atx主板就能插很多。</p>
+<blockquote>
+<p>总线插槽 bus slots</p>
+</blockquote>
+<h4 id="芯片组-chipset"><a class="markdownIt-Anchor" href="#芯片组-chipset"></a> 芯片组 chipset</h4>
+<p>截止到2022.8.12的主板产品分类（芯片组栏）intel：</p>
+<ul>
+<li>Z690</li>
+<li>B660：intel 12代</li>
+<li>B550</li>
+<li>H610</li>
+<li>H510</li>
+<li>X570</li>
+</ul>
+<blockquote>
+<p>两个平台，都有X和B，要注意适配的cpu</p>
+<ul>
+<li>intel：H代表低端主板，B代表中端主板，Z代表高端主板
+<ul>
+<li>6是第12代酷睿芯片</li>
+</ul>
+</li>
+<li>amd：X专业级或者发烧级，B：主流级，A：入门级</li>
+</ul>
+</blockquote>
+<p>老式主板还有南桥和北桥，北桥芯片往往有较高的工作频率，所以发热量颇高南桥芯片主要决定主板的功能。如今北桥的功能逐渐被CPU所包含，自身结构不断简化甚至在芯片组中也已不复存在。</p>
+<ul>
+<li>北桥 north bridge：很重要
+<ul>
+<li>北桥芯片是系统控制芯片，主要负责CPU、内存、显卡（pcie直连cpu的通道）三者之间的数据交换，北桥芯片还与南桥芯片连接</li>
+</ul>
+</li>
+<li>南桥 south bridge
+<ul>
+<li>主板上的各种外设接口、PCIE非直连cpu部分、硬盘，都归南桥芯片控制</li>
+</ul>
+</li>
+</ul>
+<h2 id="12-板型-form-factors"><a class="markdownIt-Anchor" href="#12-板型-form-factors"></a> 1.2 板型 form factors</h2>
+<blockquote>
+<p>sizes &amp; shapes</p>
+</blockquote>
+<p>现在一般是ATX，还有microATX，E-ATX，mini-ATX</p>
+<h2 id="13-品牌和产品"><a class="markdownIt-Anchor" href="#13-品牌和产品"></a> 1.3 品牌和产品</h2>
+<p>主板的几个品牌：</p>
+<ul>
+<li>华硕 asus
+<ul>
+<li>顶级：ROG（Republic of Gamers）
+<ul>
+<li>ROG STRIX：旗舰高端玩家，对超频和扩展有追求</li>
+<li>ROG 玩家国度：高性能炫彩</li>
+</ul>
+</li>
+<li>中端（重炮手）：TUF GAMING 极致稳定</li>
+<li>入门：PRIME</li>
+</ul>
+</li>
+<li>微星 msi
+<ul>
+<li>入门：PRO系列</li>
+<li>中端主流（迫击炮）：MAG系列 MSI Arsenal GAMING（微星 军火库 电竞）</li>
+<li>高端：MPG系列 MSI Performance GAMING（微星 性能 电竞）</li>
+<li>旗舰：MEG系列 MSI Enthusiast GAMING（微星 狂热 电竞）</li>
+</ul>
+</li>
+<li>技嘉 gigabyte
+<ul>
+<li>AORUS</li>
+<li>AERO</li>
+<li>GAMING</li>
+<li>ULTRA DURABLE</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>旗舰 flagship：旗舰机的意思是该品牌目前最高端，最能吸引人目光的型号。</p>
+</blockquote>
+<h2 id="14-其他相关内容"><a class="markdownIt-Anchor" href="#14-其他相关内容"></a> 1.4 其他相关内容</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=H9pGbLJknDk">How do PCBs work?</a>
+<ul>
+<li>PCB和集成电路不同，PCB只有“连线”，没有元器件；而集成电路是有元器件的。PCB是印刷出来的</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=N7ut61pSLwk">How CPUs Are Made As Fast As Possible?</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=m8_vdYJEnm8">电脑开机：如何比别人更快！？</a>
+<ol>
+<li>电源供电，主板稳压</li>
+<li>UEFI（新）/BIOS（老）
+<ul>
+<li>bios会开机自检，uefi不会所以更快</li>
+</ul>
+</li>
+<li>启动引导，找到硬盘，启动操作系统</li>
+<li>选择系统（多个的情况），加载操作系统
+<ul>
+<li>初始化，os核心从硬盘加载到内存</li>
+<li>控制权交给os</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=8JpLPenK5v0&amp;list=PLdid8P_6RNJqVr9RcBt_IPpa4Wz7EtB8c&amp;index=6">南桥芯片组</a></li>
+</ul>
+<h1 id="2-cpu-gpu"><a class="markdownIt-Anchor" href="#2-cpu-gpu"></a> 2 CPU &amp; GPU</h1>
+<ul>
+<li>GPU是通过PCIE插槽连接在主板上的，只有长的才能接显卡，所以主板的PCIE限制了显卡的数量</li>
+<li>多CPU、多GPU都需要主板的支持，貌似也只能装linux系统
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45172832/article/details/124396797">可以看这个关于linux的文</a></li>
+<li>芯片是核心，主板是硬件服务实现的支持</li>
+<li>什么是超算？把计算机连接在一起，获得更强大计算能力，也就是一群计算机并行。</li>
+</ul>
+</li>
+</ul>
+<h2 id="21-基础结构"><a class="markdownIt-Anchor" href="#21-基础结构"></a> 2.1 基础结构</h2>
+<blockquote>
+<p>根据教科书，CPU包括运算器和控制器</p>
+<ul>
+<li>考试：CPU只有ALU和CU</li>
+<li>实际应用里（如intel、nvidia等），也包含了部分存储结构，比如多级cache。甚至还会集成更多的东西，只不过核心就是ALU和CU</li>
+</ul>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html">NVIDIA官网： cuda toolkit documentation</a></p>
+<img src="./nvidia-cuda-cpu-gpu.jpg" width="500" />
+<ul>
+<li>绿色：计算单元 ALU</li>
+<li>蓝色和紫色：cache（高速缓存）</li>
+<li>橙色：DRAM存储单元</li>
+<li>黄色：控制单元 CU</li>
+</ul>
+<p>根据这张图（来自NVIDIA cuda文档），可以明显看出GPU的计算单元非常夸张，控制单元和存储单元只有比较小的一部分。</p>
+<blockquote>
+<p>AMD有一款APU，集成了CPU和GPU，实现了CPU和GPU的真正融合（并不是普通的集显）</p>
+</blockquote>
+<h2 id="22-参数详解"><a class="markdownIt-Anchor" href="#22-参数详解"></a> 2.2 参数详解</h2>
+<p>cpu和gpu都有参数和自己的架构，最好的方式 ——官网。</p>
+<h3 id="1-cpu"><a class="markdownIt-Anchor" href="#1-cpu"></a> 1. CPU</h3>
+<p><a target="_blank" rel="noopener" href="https://www.intel.cn/content/www/cn/zh/products/sku/134595/intel-core-i712700kf-processor-25m-cache-up-to-5-00-ghz/specifications.html">intel官网：i7-12700KF 处理器</a> 部分摘录如下：</p>
+<ul>
+<li>CPU规格
+<ul>
+<li>主频</li>
+<li>内核数
+<ul>
+<li>性能核（P-Core 大核）</li>
+<li>能效核（E-Core 小核）</li>
+</ul>
+</li>
+<li>线程数</li>
+<li>最大睿频频率</li>
+<li>最大睿频功耗</li>
+<li>基本频率</li>
+<li>基础功耗</li>
+<li>高速缓存
+<ul>
+<li>二级高速缓存总容量</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>内存支持
+<ul>
+<li>内存类型</li>
+<li>内存通道数</li>
+<li>最大内存带宽</li>
+<li>最大内存容量</li>
+</ul>
+</li>
+<li>扩展选项
+<ul>
+<li>DMI通道最大数</li>
+<li>PCIe通道数最大值</li>
+<li>PCIe配置</li>
+</ul>
+</li>
+<li>封装规格
+<ul>
+<li>支持的插槽</li>
+<li>散热</li>
+<li>大小</li>
+</ul>
+</li>
+<li>先进技术
+<ul>
+<li>指令集、指令集扩展</li>
+</ul>
+</li>
+</ul>
+<h4 id="架构"><a class="markdownIt-Anchor" href="#架构"></a> 架构</h4>
+<ul>
+<li>intel 12代CPU最新的大小核架构设计</li>
+<li>amd是zen架构，还有Bulldozer推土机架构</li>
+</ul>
+<h3 id="2-gpu"><a class="markdownIt-Anchor" href="#2-gpu"></a> 2. GPU</h3>
+<p><a target="_blank" rel="noopener" href="https://www.nvidia.cn/geforce/graphics-cards/30-series/">NVIDIA官网-3090ti规格</a></p>
+<ul>
+<li>NVIDIA Cuda Core核心数</li>
+<li>加速频率</li>
+<li>显存容量</li>
+<li>显存类型</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.gigabyte.cn/Graphics-Card/GV-N309TAORUSX-W-24GD/sp#sp">技嘉官网-3090ti规格</a></p>
+<ul>
+<li>显示核心
+<ul>
+<li>核心频率</li>
+<li>cuda数</li>
+<li>显存大小</li>
+<li>显存类型</li>
+</ul>
+</li>
+<li>显存位宽</li>
+<li>总线标准</li>
+<li>数字分辨率</li>
+<li>多屏支持</li>
+<li>显卡尺寸</li>
+<li>PCB尺寸</li>
+<li>DirectX</li>
+<li>OpenGL</li>
+<li>建议电源</li>
+<li>供电接口</li>
+<li>输出接口</li>
+<li>SLI支持</li>
+<li>水管长度</li>
+<li>Fan</li>
+<li>Radiator</li>
+<li>配件</li>
+</ul>
+<h4 id="架构-2"><a class="markdownIt-Anchor" href="#架构-2"></a> 架构</h4>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangfuliang123/article/details/112949058">GPU设备架构</a> 列举一些N卡近期的：</p>
+<ul>
+<li>Pascal架构（10系）</li>
+<li>图灵架构 Turing（20系）</li>
+<li>安培架构 Ampere（30系）</li>
+</ul>
+<h2 id="23-品牌和产品"><a class="markdownIt-Anchor" href="#23-品牌和产品"></a> 2.3 品牌和产品</h2>
+<h3 id="1-cpu-2"><a class="markdownIt-Anchor" href="#1-cpu-2"></a> 1. CPU</h3>
+<p>主要有intel、amd，国产龙芯</p>
+<p>Fun Fact：</p>
+<ul>
+<li>switch用的cpu处理器是NVIDIA的tegra处理器，gpu应该也是NVIDIA
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av208383980?vd_source=332380f37aa700dd26b5052355228b7b">switch OLED拆解</a></li>
+</ul>
+</li>
+<li>steam deck用的是amd定制的APU处理器，APU就是集成了显卡的cpu
+<ul>
+<li><a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1724373670592641504&amp;wfr=spider&amp;for=pc">文：steam deck拆解</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="intel"><a class="markdownIt-Anchor" href="#intel"></a> Intel</h4>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.intel.cn/content/www/cn/zh/products/overview.html">官网-处理器产品系列</a></p>
+</blockquote>
+<img src="./intel-cpu-products.jpg" width="600" />
+<p>可以看出，我们平时经常说的<em>i3,i5,i7,i9</em>都是酷睿Core系列，除此之外还有更多的处理器来应对不同的场景。</p>
+<h4 id="amd"><a class="markdownIt-Anchor" href="#amd"></a> AMD</h4>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.amd.com/zh-hant/processors">官网-处理器</a></p>
+</blockquote>
+<p>个人PC一般是锐龙<em>R3, R5, R7, R9</em>。跟intel一样，不同场景都有不同的处理器，大型工作站、笔记本电脑等等。</p>
+<h3 id="2-gpu-2"><a class="markdownIt-Anchor" href="#2-gpu-2"></a> 2. GPU</h3>
+<ul>
+<li>gpu是显卡（Video Card）的核心部分，属于芯片处理器一类</li>
+<li>可以查看<em>显卡天梯图</em>来判断性能</li>
+</ul>
+<h4 id="nvidia"><a class="markdownIt-Anchor" href="#nvidia"></a> NVIDIA</h4>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.nvidia.cn/geforce/graphics-cards/30-series/">30系GeForce官网</a></p>
+</blockquote>
+<p>目前显卡仍然是N卡为主流，尤其是cuda让N卡在深度学习领域占优势。</p>
+<ul>
+<li>GTX</li>
+<li>RTX，20系、30系（截至2022年8月）
+<ul>
+<li>目前最好的是 3090ti</li>
+</ul>
+</li>
+</ul>
+<h4 id="amd-2"><a class="markdownIt-Anchor" href="#amd-2"></a> AMD</h4>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.amd.com/zh-hant/graphics">官网-gpu</a></p>
+</blockquote>
+<p>桌上电脑型显卡：</p>
+<ul>
+<li>RX, R, …
+<ul>
+<li>目前最好的是RX 6950XT</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-显卡-video-card"><a class="markdownIt-Anchor" href="#3-显卡-video-card"></a> 3. 显卡 Video Card</h3>
+<ul>
+<li>显卡
+<ul>
+<li>公版显卡：一般在公布芯片的同时会做一个显卡</li>
+<li>非公版显卡：购买芯片，其他厂家加工</li>
+</ul>
+</li>
+<li>一般市面上买到的都是非公版显卡，并且一般都比公版好</li>
+</ul>
+<h4 id="常见的品牌"><a class="markdownIt-Anchor" href="#常见的品牌"></a> 常见的品牌</h4>
+<ul>
+<li>一线：华硕，微星，技嘉，蓝宝石，迪兰</li>
+<li>准一线：七彩虹，索泰，影驰</li>
+<li>二线：耕升，铭瑄，讯景</li>
+</ul>
+<blockquote>
+<p>华硕这些太贵，基本往七彩虹、影驰、技嘉这种买就行。</p>
+</blockquote>
+<h2 id="24-其他相关内容"><a class="markdownIt-Anchor" href="#24-其他相关内容"></a> 2.4 其他相关内容</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zhidao.baidu.com/question/1644911328317143540.html">为什么intel不制造独立显卡？</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=N7ut61pSLwk">How CPUs Are Made As Fast As Possible</a>
+<ul>
+<li>CPU是从沙子开始生产的，生产的工具叫光刻机</li>
+<li>intel，amd，台积电，三星，等cpu的制造技术与半导体</li>
+<li>huawei等与通信、操作系统、CPU等，甚至是与台积电</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=tq62FTYuZ8M&amp;list=PL7mmImi_1wpMVhVpBWr3Bob7kdchdDEoX&amp;index=1">CPU散片和盒装</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=RBf8FLS6q8E">NVIDIA NVLink</a>
+<ul>
+<li>这个突破了pcie，是NVDIA自己的总线协议，就用于搞多个显卡</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV16r4y1N7Sk/?spm_id_from=333.788.recommend_more_video.-1&amp;vd_source=332380f37aa700dd26b5052355228b7b">2个amd霄龙，10个3090装一台电脑，linux系统</a>
+<ul>
+<li>多cpu、多gpu，多核、并行等技术</li>
+</ul>
+</li>
+<li>了解一下总线/各种协议的具体内容，能更理解硬件
+<ul>
+<li>USB、Type-C等等，都是协议的接口</li>
+<li>包括HDMI、VGA、VGI等音视频传输协议</li>
+<li>蓝牙、NFC等无线，都有对应的协议</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%8C%87%E4%BB%A4%E9%9B%86/238130">百度百科-指令集</a>
+<ul>
+<li>每一种新型的CPU在设计时就规定了一系列与其他硬件电路相配合的指令系统</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/127943732">CPU科普</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=vgPFzblBh7w&amp;list=PL8t1FdN2Tj3ZVAzTY-FvsS0qy-mEfRdoj">Intel Technology: Architecture All Access</a></li>
+</ul>
+<blockquote>
+<p>这样就更能看出，operators -&gt; 操作电子元器件级别的人，包括cpu各种控制；operating system -&gt; 帮我们操作了这些东西。</p>
+</blockquote>
+<h1 id="3-内存-memory"><a class="markdownIt-Anchor" href="#3-内存-memory"></a> 3 内存 Memory</h1>
+<blockquote>
+<p>存储器分类：<a target="_blank" rel="noopener" href="https://blog.csdn.net/as480133937/article/details/123455890">此文比较详细</a></p>
+<ul>
+<li>易失性存储器：RAM</li>
+<li>非易失性存储器（non-volatile memory）
+<ul>
+<li>ROM</li>
+<li>FLASH</li>
+<li>光盘、软盘、硬盘等</li>
+</ul>
+</li>
+</ul>
+<p>本节主要涉及RAM和ROM，下一节涉及硬盘。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目</th>
+<th style="text-align:left">RAM</th>
+<th style="text-align:left">ROM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">全称</td>
+<td style="text-align:left">随机存取存储器<br /> Random Access Memory</td>
+<td style="text-align:left">只读存储器<br /> Read Only Memory</td>
+</tr>
+<tr>
+<td style="text-align:left">简介</td>
+<td style="text-align:left">掉电丢失数据</td>
+<td style="text-align:left">系统掉电仍能保持数据</td>
+</tr>
+<tr>
+<td style="text-align:left">子分类</td>
+<td style="text-align:left">1. 静态RAM-SRAM (Static RAM)：只要有电就保持数据，一般作为CPU的cache <br /> 2. 动态RAM-DRAM (Dynamic RAM)：需要不断刷新保持数据，分为同步SDRAM和异步。一般作电脑内存</td>
+<td style="text-align:left">1. 固定内容ROM <br /> 2. 可一次编程PROM<br /> 3. 可擦除ROM：紫外线擦除电写入EPROM、电擦除电写入EEPROM</td>
+</tr>
+<tr>
+<td style="text-align:left">实际</td>
+<td style="text-align:left">同步DRAM-SDRAM (Synchronous DRAM)：装机用的DDR的全称为<strong>双倍速率同步动态随机存储器</strong>(Dual Data Rate SDRAM)</td>
+<td style="text-align:left">ROM都在主板上，存了BIOS</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>ddr5比ddr4性能更好，但是价格也更高</li>
+<li>目前主板上的ROM都是FLASH，也就是一种可快速读写的EEPROM</li>
+<li>存储器，速度倒序，容量正序总结：
+<ul>
+<li>寄存器</li>
+<li>SRAM - cpu的cache</li>
+<li>DRAM - 外面的内存条，一般是同步的SDRAM</li>
+<li>FLASH - 主板上存BIOS的ROM。固态硬盘也是Flash芯片</li>
+</ul>
+</li>
+</ul>
+<h2 id="31-参数"><a class="markdownIt-Anchor" href="#31-参数"></a> 3.1 参数</h2>
+<ul>
+<li>容量</li>
+<li>内存频率</li>
+</ul>
+<h2 id="32-品牌和产品"><a class="markdownIt-Anchor" href="#32-品牌和产品"></a> 3.2 品牌和产品</h2>
+<ul>
+<li>金士顿</li>
+<li>海盗船</li>
+<li>英睿达</li>
+<li>威刚</li>
+<li>铠侠（也即是东芝）</li>
+</ul>
+<h2 id="33-其他相关内容"><a class="markdownIt-Anchor" href="#33-其他相关内容"></a> 3.3 其他相关内容</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Lozf9sceW_o">what is dram?</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/129784673">内存条科普</a></li>
+<li>存储器的基本原理：锁存器 Latch</li>
+</ul>
+<h1 id="4-硬盘-hard-disk"><a class="markdownIt-Anchor" href="#4-硬盘-hard-disk"></a> 4 硬盘 Hard Disk</h1>
+<p>曾经，</p>
+<ul>
+<li>硬盘：存数据</li>
+<li>软盘：运数据
+<ul>
+<li>现在被U盘、移动硬盘替代</li>
+</ul>
+</li>
+<li>光盘</li>
+</ul>
+<h2 id="41-基本分类及相应参数"><a class="markdownIt-Anchor" href="#41-基本分类及相应参数"></a> 4.1 基本分类及相应参数</h2>
+<ul>
+<li>机械硬盘 HDD：盘片和磁头，高速旋转读取
+<ul>
+<li>接口
+<ul>
+<li>SATA接口</li>
+</ul>
+</li>
+<li>转速</li>
+<li>容量</li>
+<li>缓存</li>
+</ul>
+</li>
+<li>固态硬盘 SSD：闪存芯片的阵列式，没有机械设备
+<ul>
+<li>接口
+<ul>
+<li>SATA接口</li>
+<li>M.2 (AHCI协议)：也被叫做M.2（SATA总线），走的还是SATA的通道，所以交换带宽极限依然是SATA3.0的</li>
+<li>M.2 (NVMe协议)：真正意义上的高速固态硬盘，走PCIe通道，能突破SATA3.0的极限，而且PCIe通道直连CPU，几乎没有延迟</li>
+</ul>
+</li>
+<li>闪存类型</li>
+<li>容量</li>
+<li>缓存</li>
+<li>颗粒</li>
+</ul>
+</li>
+</ul>
+<h2 id="42-品牌和产品"><a class="markdownIt-Anchor" href="#42-品牌和产品"></a> 4.2 品牌和产品</h2>
+<ul>
+<li>三星</li>
+<li>西部数据</li>
+<li>铠侠（东芝）</li>
+<li>镁光</li>
+</ul>
+<h2 id="43-其他相关内容"><a class="markdownIt-Anchor" href="#43-其他相关内容"></a> 4.3 其他相关内容</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=UK6x-6H2XBQ">硬盘数据恢复的原理</a>
+<ul>
+<li>删除并不会真的清除磁盘，而是代表这个文件的磁盘位置可以被重写。新文件可以写在这里，覆盖这一块磁盘位置。所以，在没有被覆盖的时候，都是能恢复的。<em>文件粉碎</em>就不可被恢复，原理就是写一些别的东西到同样的位置。</li>
+<li>trim优化，会定时清除固态硬盘上被删除的数据，保证了硬盘的性能</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/bad08e1e823d8748c85121fb.html">windows如何看到硬盘扇区和磁道等</a>
+<ul>
+<li>windows环境下，安装winhex能看到磁盘地址及内容</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/135430984">硬盘科普</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=lGAiNZYMAWY&amp;list=PLdid8P_6RNJqVr9RcBt_IPpa4Wz7EtB8c&amp;index=7">固态硬盘为什么比机械硬盘快？快在哪里？快的这些地方影响什么体验？</a></li>
+</ul>
+<h1 id="5-monitor-gpu"><a class="markdownIt-Anchor" href="#5-monitor-gpu"></a> 5 Monitor &amp; GPU</h1>
+<p>显示器是通过接口（HDMI、VGA、DVI等）与GPU相连的。</p>
+<p>显示器基础分类：</p>
+<ul>
+<li>液晶显示器 LCD</li>
+<li>有机发光半导体 OLED</li>
+<li>CRT太老了，已经是过去式了</li>
+</ul>
+<p>以下一组RGB均为一个像素：</p>
+<img src="./a-pixel.jpg" width="300" />
+<p><a target="_blank" rel="noopener" href="https://zhidao.baidu.com/question/1375303818491053619.html">显示器的混色方法</a>：</p>
+<ul>
+<li>相加混色
+<ul>
+<li>空间混色，3个很近，人眼自己产生光的混合</li>
+<li>时间混色（刷新），靠人的生理原理</li>
+</ul>
+</li>
+<li>相减混色</li>
+</ul>
+<blockquote>
+<p>我的疑问：为什么都是rgb排布，而人眼不会把两个像素的gbr或者brg混在一起？同时手机那样的像素点排布，为什么还能实现因为距离近产生的混合的效果？</p>
+</blockquote>
+<h2 id="51-参数"><a class="markdownIt-Anchor" href="#51-参数"></a> 5.1 参数</h2>
+<ul>
+<li>尺寸：英寸 inch
+<ul>
+<li>21/24/27等，都是屏幕对角线的长度</li>
+</ul>
+</li>
+<li>分辨率：
+<ul>
+<li>e.g. 经典的宽高比16:9的1080p显示器：即1920*1080，指宽*高各有多少个像素点。1080p即可指代分辨率。</li>
+</ul>
+</li>
+<li>PPI：Pixels Per Inch
+<ul>
+<li>显示器的PPI衡量：对角线上有多少个像素点，除以尺寸
+<ul>
+<li><code>PPI(27寸1080p) = sqrt(1080**2 + 1920**2) / 27 = 82</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>最佳观看距离
+<ul>
+<li>iPhone4的发布会中，乔老爷子提出了一个概念：<em>视网膜屏幕</em>。它的定义是“PPI300以上屏幕在10英寸（25.4厘米）外观看时，人眼不会察觉到像素点的存在，屏幕显示效果就十分细腻，图像细节也会很丰富。
+<ul>
+<li>换句话说，10inch以内观看，ppi300以上感觉最好</li>
+<li>27英寸屏幕最佳观看距离是70cm，也就是说，需要到ppi107最好</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>常用接口：HDMI、VGA、DVI
+<ul>
+<li>一般会从GPU接，用集显就接在主板上，用独显就接在显卡上</li>
+</ul>
+</li>
+</ul>
+<p>通常选购的搭配，符合<em>视网膜屏幕</em>标准的搭配：</p>
+<ul>
+<li>1080p下，21.5inch以下</li>
+<li>2k下，27inch以下</li>
+<li>4k下，41inch以下</li>
+</ul>
+<h3 id="其他参数"><a class="markdownIt-Anchor" href="#其他参数"></a> 其他参数</h3>
+<ul>
+<li>刷新率：xxx hz。电子束对屏幕上的图像重复扫描的次数，每秒重复xxx周。是显示器的参数，为常量。
+<ul>
+<li><strong>FPS</strong>：frame per second。这是<strong>显卡/GPU</strong>每秒输出的帧数，是一个变量。</li>
+<li>对于144hz的刷新率，和144fps：
+<ul>
+<li>一秒刷新144周 - 一秒产出144帧：刚好相互对上，一帧即刷新一周展示</li>
+</ul>
+</li>
+<li>对于144hz的刷新率，和60fps：
+<ul>
+<li>一秒刷新144周 - 一秒产出60帧：一帧刷新 <code>1/60*144</code> 周。属于显卡跟不上显示器，但是没有多大问题，因为也可能是每帧变化不大。</li>
+</ul>
+</li>
+<li>对于144hz的刷新率，和200fps：
+<ul>
+<li>会适当舍弃几帧不展示，属于显示器跟不上显卡了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>色域：能展示颜色的多少</li>
+<li>面板类型：IPS、TN、VA</li>
+<li>HDR：高动态范围成像</li>
+<li>护眼…</li>
+</ul>
+<h2 id="52-其他相关内容"><a class="markdownIt-Anchor" href="#52-其他相关内容"></a> 5.2 其他相关内容</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/336924730">显示原理</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=WdS4JU17HRs">How do touchscreens work?</a></li>
+<li><a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1671234130825839425&amp;wfr=spider&amp;for=pc">显示器科普</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37845735/article/details/124540586">LCD基础知识（包含电路）</a></li>
+<li><a target="_blank" rel="noopener" href="https://gq-zeng.blog.csdn.net/article/details/103205833?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-1-103205833-blog-124540586.pc_relevant_vip_default&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-1-103205833-blog-124540586.pc_relevant_vip_default&amp;utm_relevant_index=2">LCD编程显示像素点</a>
+<ul>
+<li>主板连接显示器，cpu控制输出信号，显示器展示内容。这是通过连接的接口，cpu控制读写的，需要了解接口和控制的原理。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=gZriQjtABCk&amp;list=PLdid8P_6RNJqVr9RcBt_IPpa4Wz7EtB8c&amp;index=7">LED和OLED</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=yxygknX1AiE">Monitors Explained - LCD, LED, OLED, CRT, TN, IPS, VA</a></li>
+</ul>
+<h1 id="6-电源-散热-机箱"><a class="markdownIt-Anchor" href="#6-电源-散热-机箱"></a> 6 电源、散热、机箱</h1>
+<ul>
+<li>电源功耗很重要</li>
+<li>散热不好会导致降频，从而让硬件性能无法完全释放</li>
+<li>机箱：机箱构造对散热有影响</li>
+</ul>
+<h2 id="61-基本介绍及参数"><a class="markdownIt-Anchor" href="#61-基本介绍及参数"></a> 6.1 基本介绍及参数</h2>
+<ul>
+<li>电源
+<ul>
+<li>功率，必须满足GPU的最低要求</li>
+<li>模组</li>
+<li>认证</li>
+</ul>
+</li>
+<li>散热
+<ul>
+<li>风冷</li>
+<li>水冷</li>
+</ul>
+</li>
+<li>机箱
+<ul>
+<li>注意体积、机箱布局、主板和各个硬件的尺寸支持</li>
+</ul>
+</li>
+</ul>
+<h2 id="62-其他相关内容"><a class="markdownIt-Anchor" href="#62-其他相关内容"></a> 6.2 其他相关内容</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=r1lLFOBqhZw">电脑散热器工作原理科普</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=AixflQWXszY&amp;list=PL7mmImi_1wpMVhVpBWr3Bob7kdchdDEoX&amp;index=21">电源 模组</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=EjBQ-di7zDQ">电源 金牌/铜牌80PLUS认证</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/345308612">2K为什么是1440p，4K为什么是2160p?</a></li>
+</ul>
+<h1 id="7-其他外设及接口等"><a class="markdownIt-Anchor" href="#7-其他外设及接口等"></a> 7 其他外设及接口等</h1>
+<h2 id="71-操作系统"><a class="markdownIt-Anchor" href="#71-操作系统"></a> 7.1 操作系统</h2>
+<p>操作系统：</p>
+<ul>
+<li>本质上是制定了<strong>一系列的<em>操作</em>功能</strong>，以便更好地<strong>利用硬件设备</strong>
+<ul>
+<li>比如最初的工作排序，后来的处理器协调，等等，都是在做一个软件通用的适配平台，让硬件更好地被利用。
+<ul>
+<li>os功能：进程管理、存储管理、设备管理、文件管理、作业管理</li>
+</ul>
+</li>
+<li>否则，所有程序都是“特例”，需要为平台单独写一串代码，也就是那条<strong>纸带</strong></li>
+</ul>
+</li>
+<li>汇编语言写现代os是不大可能的，太复杂了。所以理论上说，实践过程中需要为平台先写好一个编译器，再用高级语言写复杂的操作系统。</li>
+<li>果然，查阅资料发现，C语言与Unix操作系统息息相关，<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/C_(programming_language)#:~:text=C%20is%20an%20imperative%20procedural,all%20with%20minimal%20runtime%20support.">wikipedia-C-history</a>，摘录如下：
+<ul>
+<li>最早，unix是Dennis Ritchie 和 Ken Thompson用汇编在PDP-7上写的，最终他们决定将它移植到PDP-11，也是用汇编写的</li>
+<li>Thompson希望有一个新的语言利用好新平台。一开始尝试了写Fortran的编译器，但是放弃了，接连就开发了BCPL和B语言，但是B还是太慢了，并且不具备PDP-11的一些机器特性</li>
+<li>1971年，Ritchie开始改进B，命名为New B（NB），1972年，C语言诞生。在第二版本的Unix操作系统里，C语言编译器和一些特性被一同写入。</li>
+<li>第四版本的Unix在1973年发布，内核完全用C语言重写了。上述内容都是在贝尔实验室中诞生的
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wangtao_20/p/4433744.html">这个博客总结得不错，甚至AT&amp;T和Linux等都在了，甚至互联网也是伴随而来的</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>可执行文件：</p>
+<ul>
+<li>e.g. windows-.exe, Linux-ELF</li>
+<li>也就是机器可以用这一个二进制文件<strong>执行相应的操作</strong>，与操作系统有关，它确定了需要硬件执行什么操作。可以用文本模式打开.exe文件，发现是一长串的十六进制机器码
+<ul>
+<li>本质上，就是原来的那条被送进去跑的<strong>纸带</strong>，在这个操作系统下对应跑的内容（因为操作系统额外规定了一些必要的东西）</li>
+</ul>
+</li>
+</ul>
+<h2 id="72-其他问题及科普"><a class="markdownIt-Anchor" href="#72-其他问题及科普"></a> 7.2 其他问题及科普</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PL7mmImi_1wpMVhVpBWr3Bob7kdchdDEoX">硬件科普系列</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=SAaESb4wTCM&amp;list=PLdid8P_6RNJqVr9RcBt_IPpa4Wz7EtB8c&amp;index=10">How does a Mouse know when you move it? || How Does a Computer Mouse Work?</a>
+<ul>
+<li>鼠标把信号传给cpu，还有的信息，操作系统可以指挥cpu需要用这些信息执行什么操作</li>
+</ul>
+</li>
+<li>接口的协议和编程等需要单独进行了解，以便更好地理解软件、硬件工作原理。本文不再详述，留下几个问题：
+<ul>
+<li>接口的工作原理？如何对硬件接口编程，是固件还是驱动软件？</li>
+<li>外设如何通过接口输入/输出信号？</li>
+<li>鼠标、键盘等外设如何与显示器结合工作？比如，接口之间传输什么信息、怎么传，CPU又如何控制，又如何获取用户鼠标点击的位置和行为？</li>
+<li>耳机、音响、触摸屏的原理？</li>
+<li>CPU和GPU之间的控制和接口的逻辑</li>
+</ul>
+</li>
+</ul>
+<h1 id="8-关于测评和benchmark"><a class="markdownIt-Anchor" href="#8-关于测评和benchmark"></a> 8 关于测评和benchmark</h1>
+<p>一些测评的软件：</p>
+<ul>
+<li>3Dmark、CineBench、aida64、asssdbenchmark、鲁大师等</li>
+<li>furmark 测试显卡</li>
+<li>主流游戏测评机器：古墓丽影、荒野大镖客、赛博朋克、GTA等</li>
+</ul>
+<h1 id="9-第一次装机记录~"><a class="markdownIt-Anchor" href="#9-第一次装机记录~"></a> 9 第一次装机记录~</h1>
+<p>这才是真正意义上自己的第一台“电脑”</p>
+<h2 id="91-配置清单-20228"><a class="markdownIt-Anchor" href="#91-配置清单-20228"></a> 9.1 配置清单 (2022.8)</h2>
+<p>总价：7511（全京东自营店购买）</p>
+<ul>
+<li>板U：2869
+<ul>
+<li>微星迫击炮：MAG B660M MORTAR WIFI DDR4，板型M-ATX紧凑型</li>
+<li>CPU：Intel 酷睿 i5-12600KF</li>
+</ul>
+</li>
+<li>内存：296
+<ul>
+<li>金百达 16G(8G*2)套装 DDR4 3600</li>
+</ul>
+</li>
+<li>SSD：579
+<ul>
+<li>铠侠 1T NVMe M.2接口</li>
+</ul>
+</li>
+<li>显卡：2899
+<ul>
+<li>技嘉魔鹰 RTX3060 GAMING OC 12G</li>
+</ul>
+</li>
+<li>CPU散热：159
+<ul>
+<li>利民 PA120 SE 6热管双塔逆转</li>
+</ul>
+</li>
+<li>机箱风扇：59
+<ul>
+<li>先马冰洞 3个12cm机箱散热风扇 无光</li>
+</ul>
+</li>
+<li>机箱：179
+<ul>
+<li>爱国者 YOGO M2 白色</li>
+</ul>
+</li>
+<li>电源：469
+<ul>
+<li>长城 额定650W 金牌全模组</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>OMG！期待了很久，也做了超级多的工作，最后发现研究生宿舍太小根本放不下主机，只能忍痛退货了555，转战游戏本！</p>
+</blockquote>
+<h2 id="92-游戏本"><a class="markdownIt-Anchor" href="#92-游戏本"></a> 9.2 游戏本</h2>
+<p>选购游戏本，其实也就是高性能笔记本，上述内容本身也适用于各种“电脑”的选购。同时需要补充，配置在笔记本电脑上的CPU和GPU，都是专门为此类设备打造的。</p>
+<p>我的需求：</p>
+<ul>
+<li>cpu：不低于12代i7，标压</li>
+<li>gpu：3060/3070，显存6g+</li>
+<li>内存：16g+，ddr5最好，可以自己拓展</li>
+<li>ssd：512g+，可以自己拓展</li>
+<li>散热要好，不要轻薄游戏本</li>
+<li>尽可能选择一线品牌，预算1w+左右</li>
+</ul>
+<blockquote>
+<p>我主要的功能需求：</p>
+<ul>
+<li>虚拟机</li>
+<li>简单的音视频编辑和图像处理（pr、ae、ps、ai、au…）</li>
+<li>做简单基础图形学，C++的开发支持，opengl等等</li>
+<li>能使用blender、unity、unreal engine，部分简单的游戏</li>
+<li>python环境、前端代码</li>
+<li>其他简单的办公环境</li>
+</ul>
+</blockquote>
+<h3 id="游戏本品牌"><a class="markdownIt-Anchor" href="#游戏本品牌"></a> 游戏本品牌</h3>
+<ul>
+<li>一线：外星人、ROG、雷蛇</li>
+<li>准一线：联想拯救者、戴尔游匣、华硕天选、惠普暗影精灵、宏碁暗影骑士擎</li>
+<li>二线：机械革命、神舟、雷神</li>
+</ul>
+<blockquote>
+<p>待定：合计10499左右，完全足够了</p>
+<ul>
+<li>联想拯救者 y9000p ￥9499
+<ul>
+<li>12代i7标压H</li>
+<li>gpu3060，6g显存，满血</li>
+<li>内存16g ddr5 可加至32</li>
+<li>ssd512g，2个m.2接口 pcie4.0</li>
+<li>散热不错</li>
+<li>2.5k屏，16:10，窄边框还有摄像头</li>
+<li>预装windows11</li>
+<li>自己再加个1T固态，买三星980pro或者西数sn850就行 ￥999左右</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><strong>2022.8.19</strong>：经本人研究发现，笔记本电脑因为是<strong>整机</strong>，又考虑到<strong>使用年限</strong>的问题（一般笔记本也就用个4-6年吧），在<strong>没有直接性能需求</strong>的情况下（比如一次性用满所有性能），根本没有必要买“顶配”、“旗舰”。选择满足当下需求的主流配置即可，比如现在对于我来说，选择可以拓展内存和硬盘的，cpu12代i7、gpu3060、内存16g+、固态512g+，这样就足够了。一来是4年+之后换电脑没有负罪感，二来是性能比刚刚好多一点就够这么些年用了。</p>
+<p>一线品牌性价比仍然不高，对比之下rog枪神都算性价比高的了，但是它没有摄像头我还是不能忍；外星人纯纯的智商税、高颜值、好服务；戴尔游匣、华硕天选、惠普暗影精灵这些主流大众的，又或多或少有些奇奇怪怪的大小毛病；类似机械革命这种品牌，看上去性价比是高了，但是我也算是个游戏本小白吧，这售后实在是不敢买，可以考虑以后自己有钱了买来试试水体验一遍。</p>
+<p>算来算去，在我的条件下，真就是联想拯救者比较ok… 虽然溢价严重，但是整体真的没有明显缺陷，同级别的竞争对手又都这么拉，唉。</p>
+<h1 id="10-conclusion-结语"><a class="markdownIt-Anchor" href="#10-conclusion-结语"></a> 10 Conclusion 结语</h1>
+<ul>
+<li>计科真正的专业基础课：计组、操作系统、计网、编译原理</li>
+<li>其他的基础课：数据结构与算法、数据库</li>
+<li>正统的计算机研究：体系结构、计算机网络
+<ul>
+<li>计算机与其他方向结合的正统：自动化、机械、控制、电子信息…</li>
+</ul>
+</li>
+<li>应用类计算机：图形学、机器学习/深度学习、软件工程…</li>
+</ul>
+<p>以下只对真正的专业基础进行叙述。顺便补一句，私以为，没有正儿八经折腾过硬件装机、电子电路写CPU架构设计、徒手写操作系统、瞎折腾计算机网络（例如科学上网、拨号、路由、爬虫、做网站、搭邮箱、搞浏览器）、写编译器，都不叫学过+学会了<strong>计算机科学与技术</strong>。从0到1的过程，一定要自己经历一遍才能有更实际的体会，才能更好地从过去展望未来，数据结构和算法只是非常小的思维锻炼部分。<strong>我不想搞软件工程！！！不要做互联网！！！未来一定是实业+互联网的模式，传统经典永不可磨灭！！！</strong></p>
+<blockquote>
+<p>我准备研一把这些都去折腾一遍，也包括数学、物理等的相关知识。</p>
+</blockquote>
+<h3 id="计组"><a class="markdownIt-Anchor" href="#计组"></a> 计组</h3>
+<p>下述几大部分，电子产品大都适用，如个人pc、服务器、笔记本电脑、游戏掌机、游戏主机、平板等：</p>
+<ul>
+<li>主板
+<ul>
+<li>外设接口、总线等拓展接口，输入输出与电路</li>
+</ul>
+</li>
+<li>cpu和其他芯片
+<ul>
+<li>运算和控制</li>
+</ul>
+</li>
+<li>内存、硬盘
+<ul>
+<li>存储</li>
+</ul>
+</li>
+<li>显卡
+<ul>
+<li>输出</li>
+</ul>
+</li>
+<li>电源</li>
+<li>散热</li>
+</ul>
+<p>这些硬件电路和外设，实现了某个指令集，也就是机器诞生之初就自带该硬件平台的<strong>汇编</strong>和<strong>机器语言</strong>0和1。进制只是一种计数方式，一串0/1序列看着也头疼，索性就用8进制、16进制来纪录。固件被烧录进了ROM，一般是BIOS。</p>
+<p>外设与接口、协议：</p>
+<ul>
+<li>外设都是通过某个<strong>接口</strong>与<strong>主机</strong>相连，外设需要针对这个接口的内容、适配的操作系统、自身功能等编写软件驱动
+<ul>
+<li>显示器与显卡：显卡把计算的frame通过接口传输给显示器</li>
+</ul>
+</li>
+<li>常用的有线：USB、USB type-c、hdmi</li>
+<li>总线协议：pcie、sata</li>
+</ul>
+<blockquote>
+<p>计算机五大部分（冯诺依曼）：输入设备、输出设备、存储器、运算器、控制器。早期以运算器为中心，现代计算机以存储器为中心。</p>
+<p>computer：A computer is a digital electronic machine that can be programmed to carry out sequences of arithmetic or logical operations (computation) automatically. 即可以进行数学和逻辑运算的机器。</p>
+</blockquote>
+<h3 id="操作系统与编译原理"><a class="markdownIt-Anchor" href="#操作系统与编译原理"></a> 操作系统与编译原理</h3>
+<ul>
+<li>当根据指令集设计出上述计算机的硬件电路架构之后，为了满足更多的需求，需要用一个软件把这些指令能组成的功能统一封装、管理起来</li>
+<li>在没有高级语言时，使用硬件平台诞生之初的汇编编写操作系统即可
+<ul>
+<li>高级语言C的诞生，与整个过程息息相关。但是<strong>编译原理</strong>、编译器，要早于操作系统、unix内核、计算机网络、C语言等等的一切</li>
+</ul>
+</li>
+<li>现如今，电脑普及，已经可以完成<em>高级-&gt;高级</em>的搭建，指令集也相对固定。所以操作系统在现成平台用C/C++等高级语言写，再编译为对应平台的汇编（机器码）即可。
+<ul>
+<li>对于现在来说，如果是全新的平台、全新的汇编/机器/指令集，那一定是编译器先行，操作系统后行。</li>
+</ul>
+</li>
+<li>只要有类似的电路设备，都能为之构建一个操作系统和软件生态
+<ul>
+<li>switch的操作系统、steam deck自己的操作系统等等</li>
+</ul>
+</li>
+</ul>
+<h3 id="计算机网络"><a class="markdownIt-Anchor" href="#计算机网络"></a> 计算机网络</h3>
+<ul>
+<li>也是在贝尔实验室，伴随着C、unix内核、大型计算机机器而诞生的</li>
+</ul>
+<h3 id="数据库"><a class="markdownIt-Anchor" href="#数据库"></a> 数据库</h3>
+<ul>
+<li>这个算系统软件，本质就是存储器+文件系统，用关系型、或者其他类型的数据库模式统一管理起来（数据结构采用B树、B+树等实现索引存储）</li>
+<li>因此，它并不算真正的<strong>专业基础</strong>，只能算计算机底层的一种应用</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">ZHAO Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://zzhao.plus/2022/08/20/computer-system-overview/">http://zzhao.plus/2022/08/20/computer-system-overview/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://zzhao.plus" target="_blank">ZHAO.Z</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/2022/08/20/computer-system-overview/computer-components.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/images/wechat.png" target="_blank"><img class="post-qr-code-img" src="/images/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/images/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/images/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/05/21/DevOverview/"><img class="next-cover" src="/2022/05/21/DevOverview/bg.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">开发综述 Dev Overview</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/images/profile.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">ZHAO Z</div><div class="author-info__description">仰望星空，脚踏实地</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div><a class="button--animated" id="card-info-btn" href="/atom.xml"><i class="fa fa-rss"></i><span>RSS订阅</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zih-an" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/zihanzhao777@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E6%9C%AC"><span class="toc-text"> 0 计算机基本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#01-%E7%A1%AC%E4%BB%B6-hardware"><span class="toc-text"> 0.1 硬件 Hardware</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%B7%B1%E8%A3%85%E4%B8%80%E5%8F%B0%E4%B8%BB%E6%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="toc-text"> 自己装一台主机的基本组成部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E7%A1%AC%E4%BB%B6%E5%A4%96%E8%AE%BE-peripherals"><span class="toc-text"> 其他硬件外设 peripherals</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BC%81%E4%B8%9A%E7%BA%A7"><span class="toc-text"> 服务器（企业级）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#02-%E5%9B%BA%E4%BB%B6-firmware"><span class="toc-text"> 0.2 固件 Firmware</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-text"> 实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#03-%E8%BD%AF%E4%BB%B6-software"><span class="toc-text"> 0.3 软件 Software</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#04-%E9%80%BB%E8%BE%91%E6%80%BB%E7%BB%93"><span class="toc-text"> 0.4 逻辑总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E4%B8%8D%E5%90%8C"><span class="toc-text"> 硬件不同</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#05-%E5%85%B3%E4%BA%8E%E4%B8%80%E4%BA%9B%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%E7%9A%84%E5%8D%9A%E5%AE%A2"><span class="toc-text"> 0.5 关于一些其他问题的博客</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E7%AD%94%E4%B8%8A%E8%BF%B0%E9%97%AE%E9%A2%98%E9%9C%80%E8%A6%81%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%86%85%E5%AE%B9%E6%9C%AC%E6%96%87%E4%B8%8D%E6%B7%B1%E5%85%A5"><span class="toc-text"> 解答上述问题需要学习的内容（本文不深入）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%B8%BB%E6%9D%BF-motherboard"><span class="toc-text"> 1 主板 Motherboard</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E4%B8%BB%E6%9D%BF%E5%9F%BA%E7%A1%80%E7%BB%93%E6%9E%84"><span class="toc-text"> 1.1 主板基础结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%86%E8%8A%82"><span class="toc-text"> 细节</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pcie"><span class="toc-text"> PCIe</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8A%AF%E7%89%87%E7%BB%84-chipset"><span class="toc-text"> 芯片组 chipset</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E6%9D%BF%E5%9E%8B-form-factors"><span class="toc-text"> 1.2 板型 form factors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81"><span class="toc-text"> 1.3 品牌和产品</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-text"> 1.4 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-cpu-gpu"><span class="toc-text"> 2 CPU &amp; GPU</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E5%9F%BA%E7%A1%80%E7%BB%93%E6%9E%84"><span class="toc-text"> 2.1 基础结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3"><span class="toc-text"> 2.2 参数详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-cpu"><span class="toc-text"> 1. CPU</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84"><span class="toc-text"> 架构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-gpu"><span class="toc-text"> 2. GPU</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84-2"><span class="toc-text"> 架构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81"><span class="toc-text"> 2.3 品牌和产品</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-cpu-2"><span class="toc-text"> 1. CPU</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#intel"><span class="toc-text"> Intel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#amd"><span class="toc-text"> AMD</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-gpu-2"><span class="toc-text"> 2. GPU</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#nvidia"><span class="toc-text"> NVIDIA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#amd-2"><span class="toc-text"> AMD</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%98%BE%E5%8D%A1-video-card"><span class="toc-text"> 3. 显卡 Video Card</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%93%81%E7%89%8C"><span class="toc-text"> 常见的品牌</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-text"> 2.4 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%86%85%E5%AD%98-memory"><span class="toc-text"> 3 内存 Memory</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#31-%E5%8F%82%E6%95%B0"><span class="toc-text"> 3.1 参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81"><span class="toc-text"> 3.2 品牌和产品</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#33-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-text"> 3.3 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E7%A1%AC%E7%9B%98-hard-disk"><span class="toc-text"> 4 硬盘 Hard Disk</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#41-%E5%9F%BA%E6%9C%AC%E5%88%86%E7%B1%BB%E5%8F%8A%E7%9B%B8%E5%BA%94%E5%8F%82%E6%95%B0"><span class="toc-text"> 4.1 基本分类及相应参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#42-%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81"><span class="toc-text"> 4.2 品牌和产品</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#43-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-text"> 4.3 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-monitor-gpu"><span class="toc-text"> 5 Monitor &amp; GPU</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#51-%E5%8F%82%E6%95%B0"><span class="toc-text"> 5.1 参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%8F%82%E6%95%B0"><span class="toc-text"> 其他参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#52-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-text"> 5.2 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E7%94%B5%E6%BA%90-%E6%95%A3%E7%83%AD-%E6%9C%BA%E7%AE%B1"><span class="toc-text"> 6 电源、散热、机箱</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#61-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%8F%82%E6%95%B0"><span class="toc-text"> 6.1 基本介绍及参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#62-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-text"> 6.2 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%85%B6%E4%BB%96%E5%A4%96%E8%AE%BE%E5%8F%8A%E6%8E%A5%E5%8F%A3%E7%AD%89"><span class="toc-text"> 7 其他外设及接口等</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#71-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text"> 7.1 操作系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#72-%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%E5%8F%8A%E7%A7%91%E6%99%AE"><span class="toc-text"> 7.2 其他问题及科普</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%84%E5%92%8Cbenchmark"><span class="toc-text"> 8 关于测评和benchmark</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%A3%85%E6%9C%BA%E8%AE%B0%E5%BD%95~"><span class="toc-text"> 9 第一次装机记录~</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#91-%E9%85%8D%E7%BD%AE%E6%B8%85%E5%8D%95-20228"><span class="toc-text"> 9.1 配置清单 (2022.8)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#92-%E6%B8%B8%E6%88%8F%E6%9C%AC"><span class="toc-text"> 9.2 游戏本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E6%9C%AC%E5%93%81%E7%89%8C"><span class="toc-text"> 游戏本品牌</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-conclusion-%E7%BB%93%E8%AF%AD"><span class="toc-text"> 10 Conclusion 结语</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%BB%84"><span class="toc-text"> 计组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8E%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86"><span class="toc-text"> 操作系统与编译原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-text"> 计算机网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text"> 数据库</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/08/20/computer-system-overview/" title="计算机系统基本 Computer System"><img src="/2022/08/20/computer-system-overview/computer-components.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机系统基本 Computer System"/></a><div class="content"><a class="title" href="/2022/08/20/computer-system-overview/" title="计算机系统基本 Computer System">计算机系统基本 Computer System</a><time datetime="2022-08-19T16:15:35.000Z" title="发表于 2022-08-20 00:15:35">2022-08-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/21/DevOverview/" title="开发综述 Dev Overview"><img src="/2022/05/21/DevOverview/bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="开发综述 Dev Overview"/></a><div class="content"><a class="title" href="/2022/05/21/DevOverview/" title="开发综述 Dev Overview">开发综述 Dev Overview</a><time datetime="2022-05-21T12:37:07.000Z" title="发表于 2022-05-21 20:37:07">2022-05-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/13/research-intro-2/" title="研究的研究（二）：论文，文献"><img src="/2022/04/13/research-intro-2/bg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="研究的研究（二）：论文，文献"/></a><div class="content"><a class="title" href="/2022/04/13/research-intro-2/" title="研究的研究（二）：论文，文献">研究的研究（二）：论文，文献</a><time datetime="2022-04-12T18:33:26.000Z" title="发表于 2022-04-13 02:33:26">2022-04-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/26/research-intro/" title="研究的研究（一）：什么是科学研究？"><img src="/2022/03/26/research-intro/bg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="研究的研究（一）：什么是科学研究？"/></a><div class="content"><a class="title" href="/2022/03/26/research-intro/" title="研究的研究（一）：什么是科学研究？">研究的研究（一）：什么是科学研究？</a><time datetime="2022-03-25T16:19:07.000Z" title="发表于 2022-03-26 00:19:07">2022-03-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/20/next-step-2022/" title="人生的下一步 2022"><img src="/2022/03/20/next-step-2022/bg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="人生的下一步 2022"/></a><div class="content"><a class="title" href="/2022/03/20/next-step-2022/" title="人生的下一步 2022">人生的下一步 2022</a><time datetime="2022-03-20T13:32:19.000Z" title="发表于 2022-03-20 21:32:19">2022-03-20</time></div></div></div></div></div></div></main><footer id="footer" style="background: #464747"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By ZHAO Z</div><div class="footer_custom_text">zihanzhao777@gmail.com</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="000993SC4KERj4" data-server="tencent" data-type="artist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-lrctype="3" data-autoplay="false" muted></div><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script><script type="text/javascript" src="/js/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:success', function(){
+  loadMeting();
+})
+
+document.onload = function(){
+  loadMeting();
+}</script></div></body></html>
