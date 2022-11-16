@@ -2,19 +2,40 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>ZHAO.Z</title>
   <icon>http://zzhao.plus/icon.png</icon>
-  <subtitle>Life with Study</subtitle>
+  
   <link href="http://zzhao.plus/atom.xml" rel="self"/>
   
   <link href="http://zzhao.plus/"/>
-  <updated>2022-10-15T12:32:06.798Z</updated>
+  <updated>2022-10-21T17:37:37.459Z</updated>
   <id>http://zzhao.plus/</id>
   
   <author>
-    <name>ZHAO Z</name>
+    <name>ZHAO.Z</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>研究的研究（三）：师生——教育和研究</title>
+    <link href="http://zzhao.plus/2022/10/21/research-intro-3/"/>
+    <id>http://zzhao.plus/2022/10/21/research-intro-3/</id>
+    <published>2022-10-21T15:59:18.000Z</published>
+    <updated>2022-10-21T17:37:37.459Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>计算机系统基本 Computer System</title>
@@ -112,7 +133,7 @@
     <link href="http://zzhao.plus/2021/06/15/if-i-can-go-back/"/>
     <id>http://zzhao.plus/2021/06/15/if-i-can-go-back/</id>
     <published>2021-06-14T17:59:53.000Z</published>
-    <updated>2022-04-28T15:02:40.687Z</updated>
+    <updated>2022-11-14T16:20:25.567Z</updated>
     
     
     <summary type="html">小小的感悟 to stay positive, still.</summary>

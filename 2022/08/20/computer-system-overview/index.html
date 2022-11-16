@@ -1,171 +1,162 @@
-<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>计算机系统基本 Computer System | ZHAO.Z</title><meta name="author" content="ZHAO Z"><meta name="copyright" content="ZHAO Z"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="这是整个计算机系统的综述，从计组出发，基本建立了操作系统、编译原理、少量计网和体系结构的感性认知">
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="这是整个计算机系统的综述，从计组出发，基本建立了操作系统、编译原理、少量计网和体系结构的感性认知">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机系统基本 Computer System">
 <meta property="og:url" content="http://zzhao.plus/2022/08/20/computer-system-overview/index.html">
 <meta property="og:site_name" content="ZHAO.Z">
 <meta property="og:description" content="这是整个计算机系统的综述，从计组出发，基本建立了操作系统、编译原理、少量计网和体系结构的感性认知">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://zzhao.plus/2022/08/20/computer-system-overview/computer-components.jpg">
+<meta property="og:locale">
+<meta property="og:image" content="http://zzhao.plus/2022/08/20/computer-system-overview/basic-logic.JPG">
+<meta property="og:image" content="http://zzhao.plus/2022/08/20/computer-system-overview/nvidia-cuda-cpu-gpu.jpg">
+<meta property="og:image" content="http://zzhao.plus/2022/08/20/computer-system-overview/intel-cpu-products.jpg">
+<meta property="og:image" content="http://zzhao.plus/2022/08/20/computer-system-overview/a-pixel.jpg">
+<meta property="og:image" content="http://zzhao.plus/2022/08/20/computer-system-overview/colorspace.png">
 <meta property="article:published_time" content="2022-08-19T16:15:35.000Z">
 <meta property="article:modified_time" content="2022-10-15T12:32:06.798Z">
-<meta property="article:author" content="ZHAO Z">
+<meta property="article:author" content="ZHAO.Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://zzhao.plus/2022/08/20/computer-system-overview/computer-components.jpg"><link rel="shortcut icon" href="/images/pencil.png"><link rel="canonical" href="http://zzhao.plus/2022/08/20/computer-system-overview/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
-    },
-    fancybox: {
-      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isanchor: false
-};
+<meta name="twitter:image" content="http://zzhao.plus/2022/08/20/computer-system-overview/basic-logic.JPG">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>计算机系统基本 Computer System</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
 
-var saveToLocal = {
-  set: function setWithExpiry(key, value, ttl) {
-    const now = new Date()
-    const expiryDay = ttl * 86400000
-    const item = {
-      value: value,
-      expiry: now.getTime() + expiryDay,
-    }
-    localStorage.setItem(key, JSON.stringify(item))
-  },
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="ZHAO.Z" type="application/atom+xml">
+</head>
 
-  get: function getWithExpiry(key) {
-    const itemStr = localStorage.getItem(key)
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Blogs</a></li><!--
+     --><!--
+       --><li><a href="/music/">Music</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2022/10/21/research-intro-3/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2022/05/21/DevOverview/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://zzhao.plus/2022/08/20/computer-system-overview/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://zzhao.plus/2022/08/20/computer-system-overview/&text=计算机系统基本 Computer System"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://zzhao.plus/2022/08/20/computer-system-overview/&title=计算机系统基本 Computer System"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zzhao.plus/2022/08/20/computer-system-overview/&is_video=false&description=计算机系统基本 Computer System"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=计算机系统基本 Computer System&body=Check out this article: http://zzhao.plus/2022/08/20/computer-system-overview/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://zzhao.plus/2022/08/20/computer-system-overview/&title=计算机系统基本 Computer System"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://zzhao.plus/2022/08/20/computer-system-overview/&title=计算机系统基本 Computer System"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://zzhao.plus/2022/08/20/computer-system-overview/&title=计算机系统基本 Computer System"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://zzhao.plus/2022/08/20/computer-system-overview/&title=计算机系统基本 Computer System"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://zzhao.plus/2022/08/20/computer-system-overview/&name=计算机系统基本 Computer System&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://zzhao.plus/2022/08/20/computer-system-overview/&t=计算机系统基本 Computer System"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
 
-    if (!itemStr) {
-      return undefined
-    }
-    const item = JSON.parse(itemStr)
-    const now = new Date()
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E6%9C%AC"><span class="toc-number">1.</span> <span class="toc-text"> 0 计算机基本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#01-%E7%A1%AC%E4%BB%B6-hardware"><span class="toc-number">1.1.</span> <span class="toc-text"> 0.1 硬件 Hardware</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%B7%B1%E8%A3%85%E4%B8%80%E5%8F%B0%E4%B8%BB%E6%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 自己装一台主机的基本组成部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E7%A1%AC%E4%BB%B6%E5%A4%96%E8%AE%BE-peripherals"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 其他硬件外设 peripherals</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BC%81%E4%B8%9A%E7%BA%A7"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 服务器（企业级）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#02-%E5%9B%BA%E4%BB%B6-firmware"><span class="toc-number">1.2.</span> <span class="toc-text"> 0.2 固件 Firmware</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#03-%E8%BD%AF%E4%BB%B6-software"><span class="toc-number">1.3.</span> <span class="toc-text"> 0.3 软件 Software</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#04-%E9%80%BB%E8%BE%91%E6%80%BB%E7%BB%93"><span class="toc-number">1.4.</span> <span class="toc-text"> 0.4 逻辑总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E4%B8%8D%E5%90%8C"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 硬件不同</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#05-%E5%85%B3%E4%BA%8E%E4%B8%80%E4%BA%9B%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%E7%9A%84%E5%8D%9A%E5%AE%A2"><span class="toc-number">1.5.</span> <span class="toc-text"> 0.5 关于一些其他问题的博客</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E7%AD%94%E4%B8%8A%E8%BF%B0%E9%97%AE%E9%A2%98%E9%9C%80%E8%A6%81%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%86%85%E5%AE%B9%E6%9C%AC%E6%96%87%E4%B8%8D%E6%B7%B1%E5%85%A5"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 解答上述问题需要学习的内容（本文不深入）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%B8%BB%E6%9D%BF-motherboard"><span class="toc-number">2.</span> <span class="toc-text"> 1 主板 Motherboard</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E4%B8%BB%E6%9D%BF%E5%9F%BA%E7%A1%80%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.</span> <span class="toc-text"> 1.1 主板基础结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%86%E8%8A%82"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 细节</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pcie"><span class="toc-number">2.1.1.1.</span> <span class="toc-text"> PCIe</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8A%AF%E7%89%87%E7%BB%84-chipset"><span class="toc-number">2.1.1.2.</span> <span class="toc-text"> 芯片组 chipset</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E6%9D%BF%E5%9E%8B-form-factors"><span class="toc-number">2.2.</span> <span class="toc-text"> 1.2 板型 form factors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81"><span class="toc-number">2.3.</span> <span class="toc-text"> 1.3 品牌和产品</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-number">2.4.</span> <span class="toc-text"> 1.4 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-cpu-gpu"><span class="toc-number">3.</span> <span class="toc-text"> 2 CPU &amp; GPU</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E5%9F%BA%E7%A1%80%E7%BB%93%E6%9E%84"><span class="toc-number">3.1.</span> <span class="toc-text"> 2.1 基础结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3"><span class="toc-number">3.2.</span> <span class="toc-text"> 2.2 参数详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-cpu"><span class="toc-number">3.2.1.</span> <span class="toc-text"> 1. CPU</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84"><span class="toc-number">3.2.1.1.</span> <span class="toc-text"> 架构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-gpu"><span class="toc-number">3.2.2.</span> <span class="toc-text"> 2. GPU</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84-2"><span class="toc-number">3.2.2.1.</span> <span class="toc-text"> 架构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81"><span class="toc-number">3.3.</span> <span class="toc-text"> 2.3 品牌和产品</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-cpu-2"><span class="toc-number">3.3.1.</span> <span class="toc-text"> 1. CPU</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#intel"><span class="toc-number">3.3.1.1.</span> <span class="toc-text"> Intel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#amd"><span class="toc-number">3.3.1.2.</span> <span class="toc-text"> AMD</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-gpu-2"><span class="toc-number">3.3.2.</span> <span class="toc-text"> 2. GPU</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#nvidia"><span class="toc-number">3.3.2.1.</span> <span class="toc-text"> NVIDIA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#amd-2"><span class="toc-number">3.3.2.2.</span> <span class="toc-text"> AMD</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%98%BE%E5%8D%A1-video-card"><span class="toc-number">3.3.3.</span> <span class="toc-text"> 3. 显卡 Video Card</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%93%81%E7%89%8C"><span class="toc-number">3.3.3.1.</span> <span class="toc-text"> 常见的品牌</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-number">3.4.</span> <span class="toc-text"> 2.4 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%86%85%E5%AD%98-memory"><span class="toc-number">4.</span> <span class="toc-text"> 3 内存 Memory</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#31-%E5%8F%82%E6%95%B0"><span class="toc-number">4.1.</span> <span class="toc-text"> 3.1 参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81"><span class="toc-number">4.2.</span> <span class="toc-text"> 3.2 品牌和产品</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#33-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-number">4.3.</span> <span class="toc-text"> 3.3 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E7%A1%AC%E7%9B%98-hard-disk"><span class="toc-number">5.</span> <span class="toc-text"> 4 硬盘 Hard Disk</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#41-%E5%9F%BA%E6%9C%AC%E5%88%86%E7%B1%BB%E5%8F%8A%E7%9B%B8%E5%BA%94%E5%8F%82%E6%95%B0"><span class="toc-number">5.1.</span> <span class="toc-text"> 4.1 基本分类及相应参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#42-%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81"><span class="toc-number">5.2.</span> <span class="toc-text"> 4.2 品牌和产品</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#43-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-number">5.3.</span> <span class="toc-text"> 4.3 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-monitor-gpu"><span class="toc-number">6.</span> <span class="toc-text"> 5 Monitor &amp; GPU</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#51-%E5%8F%82%E6%95%B0"><span class="toc-number">6.1.</span> <span class="toc-text"> 5.1 参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%8F%82%E6%95%B0"><span class="toc-number">6.1.1.</span> <span class="toc-text"> 其他参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#52-%E9%A2%9C%E8%89%B2"><span class="toc-number">6.1.2.</span> <span class="toc-text"> 5.2 颜色</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#53-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-number">6.2.</span> <span class="toc-text"> 5.3 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E7%94%B5%E6%BA%90-%E6%95%A3%E7%83%AD-%E6%9C%BA%E7%AE%B1"><span class="toc-number">7.</span> <span class="toc-text"> 6 电源、散热、机箱</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#61-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%8F%82%E6%95%B0"><span class="toc-number">7.1.</span> <span class="toc-text"> 6.1 基本介绍及参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#62-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-number">7.2.</span> <span class="toc-text"> 6.2 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%85%B6%E4%BB%96%E5%A4%96%E8%AE%BE%E5%8F%8A%E6%8E%A5%E5%8F%A3%E7%AD%89"><span class="toc-number">8.</span> <span class="toc-text"> 7 其他外设及接口等</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#71-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">8.1.</span> <span class="toc-text"> 7.1 操作系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#72-%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%E5%8F%8A%E7%A7%91%E6%99%AE"><span class="toc-number">8.2.</span> <span class="toc-text"> 7.2 其他问题及科普</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%84%E5%92%8Cbenchmark"><span class="toc-number">9.</span> <span class="toc-text"> 8 关于测评和benchmark</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%A3%85%E6%9C%BA%E8%AE%B0%E5%BD%95~"><span class="toc-number">10.</span> <span class="toc-text"> 9 第一次装机记录~</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#91-%E9%85%8D%E7%BD%AE%E6%B8%85%E5%8D%95-20228"><span class="toc-number">10.1.</span> <span class="toc-text"> 9.1 配置清单 (2022.8)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#92-%E6%B8%B8%E6%88%8F%E6%9C%AC"><span class="toc-number">10.2.</span> <span class="toc-text"> 9.2 游戏本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E6%9C%AC%E5%93%81%E7%89%8C"><span class="toc-number">10.2.1.</span> <span class="toc-text"> 游戏本品牌</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-conclusion-%E7%BB%93%E8%AF%AD"><span class="toc-number">11.</span> <span class="toc-text"> 10 Conclusion 结语</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%BB%84"><span class="toc-number">11.0.1.</span> <span class="toc-text"> 计组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8E%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86"><span class="toc-number">11.0.2.</span> <span class="toc-text"> 操作系统与编译原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">11.0.3.</span> <span class="toc-text"> 计算机网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">11.0.4.</span> <span class="toc-text"> 数据库</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
 
-    if (now.getTime() > item.expiry) {
-      localStorage.removeItem(key)
-      return undefined
-    }
-    return item.value
-  }
-}
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        计算机系统基本 Computer System
+    </h1>
 
-// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
-const getScript = url => new Promise((resolve, reject) => {
-  const script = document.createElement('script')
-  script.src = url
-  script.async = true
-  script.onerror = reject
-  script.onload = script.onreadystatechange = function() {
-    const loadState = this.readyState
-    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-    script.onload = script.onreadystatechange = null
-    resolve()
-  }
-  document.head.appendChild(script)
-})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: true,
-  postUpdate: '2022-10-15 20:32:06'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(function () {  window.activateDarkMode = function () {
-    document.documentElement.setAttribute('data-theme', 'dark')
-    if (document.querySelector('meta[name="theme-color"]') !== null) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-    }
-  }
-  window.activateLightMode = function () {
-    document.documentElement.setAttribute('data-theme', 'light')
-   if (document.querySelector('meta[name="theme-color"]') !== null) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-    }
-  }
-  const autoChangeMode = 'false'
-  const t = saveToLocal.get('theme')
-  if (autoChangeMode === '1') {
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-    if (t === undefined) {
-      if (isLightMode) activateLightMode()
-      else if (isDarkMode) activateDarkMode()
-      else if (isNotSpecified || hasNoSupport) {
-        const now = new Date()
-        const hour = now.getHours()
-        const isNight = hour <= 6 || hour >= 18
-        isNight ? activateDarkMode() : activateLightMode()
-      }
-      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
-        if (saveToLocal.get('theme') === undefined) {
-          e.matches ? activateDarkMode() : activateLightMode()
-        }
-      })
-    } else if (t === 'light') activateLightMode()
-    else activateDarkMode()
-  } else if (autoChangeMode === '2') {
-    const now = new Date()
-    const hour = now.getHours()
-    const isNight = hour <= 6 || hour >= 18
-    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
-    else if (t === 'light') activateLightMode()
-    else activateDarkMode()
-  } else {
-    if (t === 'dark') activateDarkMode()
-    else if (t === 'light') activateLightMode()
-  }const asideStatus = saveToLocal.get('aside-status')
-if (asideStatus !== undefined) {
-   if (asideStatus === 'hide') {
-     document.documentElement.classList.add('hide-aside')
-   } else {
-     document.documentElement.classList.remove('hide-aside')
-   }
-}})()</script><style type="text/css">#toggle-sidebar {bottom: 80px}</style><style type="text/css">.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body{left:-66px!important}.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover{left:0!important}</style><link rel="stylesheet" href="/css/background.css" /><link rel="stylesheet" href="APlayer.min.css"><div id="aplayer"></div><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" async></script><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="ZHAO.Z" type="application/atom+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/images/profile.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-newspaper"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> → 分类</span></a></li><li><a class="site-page" href="/categories/%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/"><i class="fa-fw fas fa-university"></i><span> 专业基础</span></a></li><li><a class="site-page" href="/categories/%E7%A0%94%E7%A9%B6%E7%A0%94%E7%A9%B6/"><i class="fa-fw fas fa-book"></i><span> 研究研究</span></a></li><li><a class="site-page" href="/categories/CG/"><i class="fa-fw fas fa-shoe-prints"></i><span> baby steps into CG</span></a></li><li><a class="site-page" href="/categories/%E6%8A%80%E6%9C%AF/"><i class="fa-fw fas fa-laptop-code"></i><span> 技术</span></a></li><li><a class="site-page" href="/categories/%E9%9A%8F%E7%AC%94/"><i class="fa-fw fas fa-coffee"></i><span> 随笔</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/pieces/"><i class="fa-fw fas fa-comment"></i><span> 啰里啰嗦</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/2022/08/20/computer-system-overview/computer-components.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ZHAO.Z</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-newspaper"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> → 分类</span></a></li><li><a class="site-page" href="/categories/%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/"><i class="fa-fw fas fa-university"></i><span> 专业基础</span></a></li><li><a class="site-page" href="/categories/%E7%A0%94%E7%A9%B6%E7%A0%94%E7%A9%B6/"><i class="fa-fw fas fa-book"></i><span> 研究研究</span></a></li><li><a class="site-page" href="/categories/CG/"><i class="fa-fw fas fa-shoe-prints"></i><span> baby steps into CG</span></a></li><li><a class="site-page" href="/categories/%E6%8A%80%E6%9C%AF/"><i class="fa-fw fas fa-laptop-code"></i><span> 技术</span></a></li><li><a class="site-page" href="/categories/%E9%9A%8F%E7%AC%94/"><i class="fa-fw fas fa-coffee"></i><span> 随笔</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/pieces/"><i class="fa-fw fas fa-comment"></i><span> 啰里啰嗦</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">计算机系统基本 Computer System</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-19T16:15:35.000Z" title="发表于 2022-08-20 00:15:35">2022-08-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-15T12:32:06.798Z" title="更新于 2022-10-15 20:32:06">2022-10-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/">专业基础</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>为了装一台自己的主机形式个人PC，需要对硬件设备进行彻底了解。同时，学计组、体系结构、操作系统等还是得知道到底是组了个什么东西、干了些什么实际的事情，别当电脑盲。</p>
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">ZHAO.Z</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-08-19T16:15:35.000Z" itemprop="datePublished">2022-08-20</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/%E4%B8%93%E4%B8%9A%E5%9F%BA%E7%A1%80/">专业基础</a>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>为了装一台自己的主机形式个人PC，需要对硬件设备进行彻底了解。同时，学计组、体系结构、操作系统等还是得知道到底是组了个什么东西、干了些什么实际的事情，别当电脑盲。</p>
 <p>本文综合了文本、视频等各种网络资料，结合部分cs课堂内容，从practice层面叙述了整个计算机系统。</p>
 <h1 id="0-计算机基本"><a class="markdownIt-Anchor" href="#0-计算机基本"></a> 0 计算机基本</h1>
 <img src="./basic-logic.JPG" width="500" />
@@ -1362,84 +1353,143 @@ if (asideStatus !== undefined) {
 <li>这个算系统软件，本质就是存储器+文件系统，用关系型、或者其他类型的数据库模式统一管理起来（数据结构采用B树、B+树等实现索引存储）</li>
 <li>因此，它并不算真正的<strong>专业基础</strong>，只能算计算机底层的一种应用</li>
 </ul>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">ZHAO Z</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://zzhao.plus/2022/08/20/computer-system-overview/">http://zzhao.plus/2022/08/20/computer-system-overview/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://zzhao.plus" target="_blank">ZHAO.Z</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/2022/08/20/computer-system-overview/computer-components.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/images/wechat.png" target="_blank"><img class="post-qr-code-img" src="/images/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/images/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/images/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/05/21/DevOverview/"><img class="next-cover" src="/2022/05/21/DevOverview/bg.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">开发综述 Dev Overview</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/images/profile.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">ZHAO Z</div><div class="author-info__description">仰望星空，脚踏实地</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div><a class="button--animated" id="card-info-btn" href="/atom.xml"><i class="fa fa-rss"></i><span>RSS订阅</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zih-an" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/zihanzhao777@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E6%9C%AC"><span class="toc-text"> 0 计算机基本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#01-%E7%A1%AC%E4%BB%B6-hardware"><span class="toc-text"> 0.1 硬件 Hardware</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%B7%B1%E8%A3%85%E4%B8%80%E5%8F%B0%E4%B8%BB%E6%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="toc-text"> 自己装一台主机的基本组成部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E7%A1%AC%E4%BB%B6%E5%A4%96%E8%AE%BE-peripherals"><span class="toc-text"> 其他硬件外设 peripherals</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BC%81%E4%B8%9A%E7%BA%A7"><span class="toc-text"> 服务器（企业级）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#02-%E5%9B%BA%E4%BB%B6-firmware"><span class="toc-text"> 0.2 固件 Firmware</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-text"> 实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#03-%E8%BD%AF%E4%BB%B6-software"><span class="toc-text"> 0.3 软件 Software</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#04-%E9%80%BB%E8%BE%91%E6%80%BB%E7%BB%93"><span class="toc-text"> 0.4 逻辑总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E4%B8%8D%E5%90%8C"><span class="toc-text"> 硬件不同</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#05-%E5%85%B3%E4%BA%8E%E4%B8%80%E4%BA%9B%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%E7%9A%84%E5%8D%9A%E5%AE%A2"><span class="toc-text"> 0.5 关于一些其他问题的博客</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E7%AD%94%E4%B8%8A%E8%BF%B0%E9%97%AE%E9%A2%98%E9%9C%80%E8%A6%81%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%86%85%E5%AE%B9%E6%9C%AC%E6%96%87%E4%B8%8D%E6%B7%B1%E5%85%A5"><span class="toc-text"> 解答上述问题需要学习的内容（本文不深入）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%B8%BB%E6%9D%BF-motherboard"><span class="toc-text"> 1 主板 Motherboard</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E4%B8%BB%E6%9D%BF%E5%9F%BA%E7%A1%80%E7%BB%93%E6%9E%84"><span class="toc-text"> 1.1 主板基础结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%86%E8%8A%82"><span class="toc-text"> 细节</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pcie"><span class="toc-text"> PCIe</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8A%AF%E7%89%87%E7%BB%84-chipset"><span class="toc-text"> 芯片组 chipset</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E6%9D%BF%E5%9E%8B-form-factors"><span class="toc-text"> 1.2 板型 form factors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81"><span class="toc-text"> 1.3 品牌和产品</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-text"> 1.4 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-cpu-gpu"><span class="toc-text"> 2 CPU &amp; GPU</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E5%9F%BA%E7%A1%80%E7%BB%93%E6%9E%84"><span class="toc-text"> 2.1 基础结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3"><span class="toc-text"> 2.2 参数详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-cpu"><span class="toc-text"> 1. CPU</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84"><span class="toc-text"> 架构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-gpu"><span class="toc-text"> 2. GPU</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84-2"><span class="toc-text"> 架构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81"><span class="toc-text"> 2.3 品牌和产品</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-cpu-2"><span class="toc-text"> 1. CPU</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#intel"><span class="toc-text"> Intel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#amd"><span class="toc-text"> AMD</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-gpu-2"><span class="toc-text"> 2. GPU</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#nvidia"><span class="toc-text"> NVIDIA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#amd-2"><span class="toc-text"> AMD</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%98%BE%E5%8D%A1-video-card"><span class="toc-text"> 3. 显卡 Video Card</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%93%81%E7%89%8C"><span class="toc-text"> 常见的品牌</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-text"> 2.4 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%86%85%E5%AD%98-memory"><span class="toc-text"> 3 内存 Memory</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#31-%E5%8F%82%E6%95%B0"><span class="toc-text"> 3.1 参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81"><span class="toc-text"> 3.2 品牌和产品</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#33-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-text"> 3.3 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E7%A1%AC%E7%9B%98-hard-disk"><span class="toc-text"> 4 硬盘 Hard Disk</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#41-%E5%9F%BA%E6%9C%AC%E5%88%86%E7%B1%BB%E5%8F%8A%E7%9B%B8%E5%BA%94%E5%8F%82%E6%95%B0"><span class="toc-text"> 4.1 基本分类及相应参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#42-%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81"><span class="toc-text"> 4.2 品牌和产品</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#43-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-text"> 4.3 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-monitor-gpu"><span class="toc-text"> 5 Monitor &amp; GPU</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#51-%E5%8F%82%E6%95%B0"><span class="toc-text"> 5.1 参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%8F%82%E6%95%B0"><span class="toc-text"> 其他参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#52-%E9%A2%9C%E8%89%B2"><span class="toc-text"> 5.2 颜色</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#53-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-text"> 5.3 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E7%94%B5%E6%BA%90-%E6%95%A3%E7%83%AD-%E6%9C%BA%E7%AE%B1"><span class="toc-text"> 6 电源、散热、机箱</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#61-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%8F%82%E6%95%B0"><span class="toc-text"> 6.1 基本介绍及参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#62-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-text"> 6.2 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%85%B6%E4%BB%96%E5%A4%96%E8%AE%BE%E5%8F%8A%E6%8E%A5%E5%8F%A3%E7%AD%89"><span class="toc-text"> 7 其他外设及接口等</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#71-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text"> 7.1 操作系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#72-%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%E5%8F%8A%E7%A7%91%E6%99%AE"><span class="toc-text"> 7.2 其他问题及科普</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%84%E5%92%8Cbenchmark"><span class="toc-text"> 8 关于测评和benchmark</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%A3%85%E6%9C%BA%E8%AE%B0%E5%BD%95~"><span class="toc-text"> 9 第一次装机记录~</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#91-%E9%85%8D%E7%BD%AE%E6%B8%85%E5%8D%95-20228"><span class="toc-text"> 9.1 配置清单 (2022.8)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#92-%E6%B8%B8%E6%88%8F%E6%9C%AC"><span class="toc-text"> 9.2 游戏本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E6%9C%AC%E5%93%81%E7%89%8C"><span class="toc-text"> 游戏本品牌</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-conclusion-%E7%BB%93%E8%AF%AD"><span class="toc-text"> 10 Conclusion 结语</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%BB%84"><span class="toc-text"> 计组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8E%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86"><span class="toc-text"> 操作系统与编译原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-text"> 计算机网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text"> 数据库</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/08/20/computer-system-overview/" title="计算机系统基本 Computer System"><img src="/2022/08/20/computer-system-overview/computer-components.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机系统基本 Computer System"/></a><div class="content"><a class="title" href="/2022/08/20/computer-system-overview/" title="计算机系统基本 Computer System">计算机系统基本 Computer System</a><time datetime="2022-08-19T16:15:35.000Z" title="发表于 2022-08-20 00:15:35">2022-08-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/21/DevOverview/" title="开发综述 Dev Overview"><img src="/2022/05/21/DevOverview/bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="开发综述 Dev Overview"/></a><div class="content"><a class="title" href="/2022/05/21/DevOverview/" title="开发综述 Dev Overview">开发综述 Dev Overview</a><time datetime="2022-05-21T12:37:07.000Z" title="发表于 2022-05-21 20:37:07">2022-05-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/13/research-intro-2/" title="研究的研究（二）：论文，文献"><img src="/2022/04/13/research-intro-2/bg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="研究的研究（二）：论文，文献"/></a><div class="content"><a class="title" href="/2022/04/13/research-intro-2/" title="研究的研究（二）：论文，文献">研究的研究（二）：论文，文献</a><time datetime="2022-04-12T18:33:26.000Z" title="发表于 2022-04-13 02:33:26">2022-04-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/26/research-intro/" title="研究的研究（一）：什么是科学研究？"><img src="/2022/03/26/research-intro/bg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="研究的研究（一）：什么是科学研究？"/></a><div class="content"><a class="title" href="/2022/03/26/research-intro/" title="研究的研究（一）：什么是科学研究？">研究的研究（一）：什么是科学研究？</a><time datetime="2022-03-25T16:19:07.000Z" title="发表于 2022-03-26 00:19:07">2022-03-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/20/next-step-2022/" title="人生的下一步 2022"><img src="/2022/03/20/next-step-2022/bg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="人生的下一步 2022"/></a><div class="content"><a class="title" href="/2022/03/20/next-step-2022/" title="人生的下一步 2022">人生的下一步 2022</a><time datetime="2022-03-20T13:32:19.000Z" title="发表于 2022-03-20 21:32:19">2022-03-20</time></div></div></div></div></div></div></main><footer id="footer" style="background: #464747"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By ZHAO Z</div><div class="footer_custom_text">zihanzhao777@gmail.com</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="000993SC4KERj4" data-server="tencent" data-type="artist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-lrctype="3" data-autoplay="false" muted></div><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script><script type="text/javascript" src="/js/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
-  'title',
-  '#config_change',
-  '#body-wrap',
-  '#rightside-config-hide',
-  '#rightside-config-show',
-  '.js-pjax'
-]
 
-if (false) {
-  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
-}
-
-var pjax = new Pjax({
-  elements: 'a:not([target="_blank"])',
-  selectors: pjaxSelectors,
-  cacheBust: false,
-  analytics: false,
-  scrollRestoration: false
-})
-
-document.addEventListener('pjax:complete', function () {
-  window.refreshFn()
-
-  document.querySelectorAll('script[data-pjax]').forEach(item => {
-    const newScript = document.createElement('script')
-    const content = item.text || item.textContent || item.innerHTML || ""
-    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
-    newScript.appendChild(document.createTextNode(content))
-    item.parentNode.replaceChild(newScript, item)
-  })
-
-  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
-
-  typeof chatBtnFn === 'function' && chatBtnFn()
-  typeof panguInit === 'function' && panguInit()
-
-  if (typeof gtag === 'function') {
-    gtag('config', '', {'page_path': window.location.pathname});
-  }
-
-  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
-
-  // Analytics
-  if (false) {
-    MtaH5.pgv()
-  }
-
-  // prismjs
-  typeof Prism === 'object' && Prism.highlightAll()
-
-  typeof preloader === 'object' && preloader.endLoading()
-})
+  </div>
+</article>
 
 
-document.addEventListener('pjax:send', function () {
-  typeof preloader === 'object' && preloader.initLoading()
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/categories/">Blogs</a></li>
+         
+          <li><a href="/music/">Music</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E6%9C%AC"><span class="toc-number">1.</span> <span class="toc-text"> 0 计算机基本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#01-%E7%A1%AC%E4%BB%B6-hardware"><span class="toc-number">1.1.</span> <span class="toc-text"> 0.1 硬件 Hardware</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%B7%B1%E8%A3%85%E4%B8%80%E5%8F%B0%E4%B8%BB%E6%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 自己装一台主机的基本组成部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E7%A1%AC%E4%BB%B6%E5%A4%96%E8%AE%BE-peripherals"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 其他硬件外设 peripherals</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BC%81%E4%B8%9A%E7%BA%A7"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 服务器（企业级）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#02-%E5%9B%BA%E4%BB%B6-firmware"><span class="toc-number">1.2.</span> <span class="toc-text"> 0.2 固件 Firmware</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#03-%E8%BD%AF%E4%BB%B6-software"><span class="toc-number">1.3.</span> <span class="toc-text"> 0.3 软件 Software</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#04-%E9%80%BB%E8%BE%91%E6%80%BB%E7%BB%93"><span class="toc-number">1.4.</span> <span class="toc-text"> 0.4 逻辑总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E4%B8%8D%E5%90%8C"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 硬件不同</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#05-%E5%85%B3%E4%BA%8E%E4%B8%80%E4%BA%9B%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%E7%9A%84%E5%8D%9A%E5%AE%A2"><span class="toc-number">1.5.</span> <span class="toc-text"> 0.5 关于一些其他问题的博客</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E7%AD%94%E4%B8%8A%E8%BF%B0%E9%97%AE%E9%A2%98%E9%9C%80%E8%A6%81%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%86%85%E5%AE%B9%E6%9C%AC%E6%96%87%E4%B8%8D%E6%B7%B1%E5%85%A5"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 解答上述问题需要学习的内容（本文不深入）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%B8%BB%E6%9D%BF-motherboard"><span class="toc-number">2.</span> <span class="toc-text"> 1 主板 Motherboard</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E4%B8%BB%E6%9D%BF%E5%9F%BA%E7%A1%80%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.</span> <span class="toc-text"> 1.1 主板基础结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%86%E8%8A%82"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 细节</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pcie"><span class="toc-number">2.1.1.1.</span> <span class="toc-text"> PCIe</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8A%AF%E7%89%87%E7%BB%84-chipset"><span class="toc-number">2.1.1.2.</span> <span class="toc-text"> 芯片组 chipset</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E6%9D%BF%E5%9E%8B-form-factors"><span class="toc-number">2.2.</span> <span class="toc-text"> 1.2 板型 form factors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81"><span class="toc-number">2.3.</span> <span class="toc-text"> 1.3 品牌和产品</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-number">2.4.</span> <span class="toc-text"> 1.4 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-cpu-gpu"><span class="toc-number">3.</span> <span class="toc-text"> 2 CPU &amp; GPU</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E5%9F%BA%E7%A1%80%E7%BB%93%E6%9E%84"><span class="toc-number">3.1.</span> <span class="toc-text"> 2.1 基础结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3"><span class="toc-number">3.2.</span> <span class="toc-text"> 2.2 参数详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-cpu"><span class="toc-number">3.2.1.</span> <span class="toc-text"> 1. CPU</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84"><span class="toc-number">3.2.1.1.</span> <span class="toc-text"> 架构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-gpu"><span class="toc-number">3.2.2.</span> <span class="toc-text"> 2. GPU</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84-2"><span class="toc-number">3.2.2.1.</span> <span class="toc-text"> 架构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81"><span class="toc-number">3.3.</span> <span class="toc-text"> 2.3 品牌和产品</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-cpu-2"><span class="toc-number">3.3.1.</span> <span class="toc-text"> 1. CPU</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#intel"><span class="toc-number">3.3.1.1.</span> <span class="toc-text"> Intel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#amd"><span class="toc-number">3.3.1.2.</span> <span class="toc-text"> AMD</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-gpu-2"><span class="toc-number">3.3.2.</span> <span class="toc-text"> 2. GPU</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#nvidia"><span class="toc-number">3.3.2.1.</span> <span class="toc-text"> NVIDIA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#amd-2"><span class="toc-number">3.3.2.2.</span> <span class="toc-text"> AMD</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%98%BE%E5%8D%A1-video-card"><span class="toc-number">3.3.3.</span> <span class="toc-text"> 3. 显卡 Video Card</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%93%81%E7%89%8C"><span class="toc-number">3.3.3.1.</span> <span class="toc-text"> 常见的品牌</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-number">3.4.</span> <span class="toc-text"> 2.4 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%86%85%E5%AD%98-memory"><span class="toc-number">4.</span> <span class="toc-text"> 3 内存 Memory</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#31-%E5%8F%82%E6%95%B0"><span class="toc-number">4.1.</span> <span class="toc-text"> 3.1 参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81"><span class="toc-number">4.2.</span> <span class="toc-text"> 3.2 品牌和产品</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#33-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-number">4.3.</span> <span class="toc-text"> 3.3 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E7%A1%AC%E7%9B%98-hard-disk"><span class="toc-number">5.</span> <span class="toc-text"> 4 硬盘 Hard Disk</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#41-%E5%9F%BA%E6%9C%AC%E5%88%86%E7%B1%BB%E5%8F%8A%E7%9B%B8%E5%BA%94%E5%8F%82%E6%95%B0"><span class="toc-number">5.1.</span> <span class="toc-text"> 4.1 基本分类及相应参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#42-%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81"><span class="toc-number">5.2.</span> <span class="toc-text"> 4.2 品牌和产品</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#43-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-number">5.3.</span> <span class="toc-text"> 4.3 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-monitor-gpu"><span class="toc-number">6.</span> <span class="toc-text"> 5 Monitor &amp; GPU</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#51-%E5%8F%82%E6%95%B0"><span class="toc-number">6.1.</span> <span class="toc-text"> 5.1 参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%8F%82%E6%95%B0"><span class="toc-number">6.1.1.</span> <span class="toc-text"> 其他参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#52-%E9%A2%9C%E8%89%B2"><span class="toc-number">6.1.2.</span> <span class="toc-text"> 5.2 颜色</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#53-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-number">6.2.</span> <span class="toc-text"> 5.3 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E7%94%B5%E6%BA%90-%E6%95%A3%E7%83%AD-%E6%9C%BA%E7%AE%B1"><span class="toc-number">7.</span> <span class="toc-text"> 6 电源、散热、机箱</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#61-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%8F%82%E6%95%B0"><span class="toc-number">7.1.</span> <span class="toc-text"> 6.1 基本介绍及参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#62-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-number">7.2.</span> <span class="toc-text"> 6.2 其他相关内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%85%B6%E4%BB%96%E5%A4%96%E8%AE%BE%E5%8F%8A%E6%8E%A5%E5%8F%A3%E7%AD%89"><span class="toc-number">8.</span> <span class="toc-text"> 7 其他外设及接口等</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#71-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">8.1.</span> <span class="toc-text"> 7.1 操作系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#72-%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%E5%8F%8A%E7%A7%91%E6%99%AE"><span class="toc-number">8.2.</span> <span class="toc-text"> 7.2 其他问题及科普</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%84%E5%92%8Cbenchmark"><span class="toc-number">9.</span> <span class="toc-text"> 8 关于测评和benchmark</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%A3%85%E6%9C%BA%E8%AE%B0%E5%BD%95~"><span class="toc-number">10.</span> <span class="toc-text"> 9 第一次装机记录~</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#91-%E9%85%8D%E7%BD%AE%E6%B8%85%E5%8D%95-20228"><span class="toc-number">10.1.</span> <span class="toc-text"> 9.1 配置清单 (2022.8)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#92-%E6%B8%B8%E6%88%8F%E6%9C%AC"><span class="toc-number">10.2.</span> <span class="toc-text"> 9.2 游戏本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E6%9C%AC%E5%93%81%E7%89%8C"><span class="toc-number">10.2.1.</span> <span class="toc-text"> 游戏本品牌</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-conclusion-%E7%BB%93%E8%AF%AD"><span class="toc-number">11.</span> <span class="toc-text"> 10 Conclusion 结语</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%BB%84"><span class="toc-number">11.0.1.</span> <span class="toc-text"> 计组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8E%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86"><span class="toc-number">11.0.2.</span> <span class="toc-text"> 操作系统与编译原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">11.0.3.</span> <span class="toc-text"> 计算机网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">11.0.4.</span> <span class="toc-text"> 数据库</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://zzhao.plus/2022/08/20/computer-system-overview/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://zzhao.plus/2022/08/20/computer-system-overview/&text=计算机系统基本 Computer System"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://zzhao.plus/2022/08/20/computer-system-overview/&title=计算机系统基本 Computer System"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://zzhao.plus/2022/08/20/computer-system-overview/&is_video=false&description=计算机系统基本 Computer System"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=计算机系统基本 Computer System&body=Check out this article: http://zzhao.plus/2022/08/20/computer-system-overview/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://zzhao.plus/2022/08/20/computer-system-overview/&title=计算机系统基本 Computer System"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://zzhao.plus/2022/08/20/computer-system-overview/&title=计算机系统基本 Computer System"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://zzhao.plus/2022/08/20/computer-system-overview/&title=计算机系统基本 Computer System"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://zzhao.plus/2022/08/20/computer-system-overview/&title=计算机系统基本 Computer System"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://zzhao.plus/2022/08/20/computer-system-overview/&name=计算机系统基本 Computer System&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://zzhao.plus/2022/08/20/computer-system-overview/&t=计算机系统基本 Computer System"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2021-2022
+    ZHAO.Z
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Blogs</a></li><!--
+     --><!--
+       --><li><a href="/music/">Music</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
   
-  if (window.aplayers) {
-    for (let i = 0; i < window.aplayers.length; i++) {
-      if (!window.aplayers[i].options.fixed) {
-        window.aplayers[i].destroy()
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
       }
-    }
-  }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
 
-  typeof typed === 'object' && typed.destroy()
 
-  //reset readmode
-  const $bodyClassList = document.body.classList
-  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+<script src="/js/main.js"></script>
 
-})
+<!-- search -->
 
-document.addEventListener('pjax:success', function(){
-  loadMeting();
-})
+<!-- Google Analytics -->
 
-document.onload = function(){
-  loadMeting();
-}</script></div></body></html>
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
