@@ -51,7 +51,23 @@
     
 	<!-- mathjax -->
 	
-<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="ZHAO.Z" type="application/atom+xml">
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']],
+        displayMath: [ ['$$','$$'] ],
+        processEscapes: true
+			},
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="ZHAO.Z" type="application/atom+xml">
 </head>
 
 <body class="max-width mx-auto px3 ltr">
@@ -109,7 +125,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#brief-intro-to-%E6%96%87%E7%8C%AE"><span class="toc-number">1.</span> <span class="toc-text"> Brief Intro. to 文献</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%9F%E5%88%8A%E5%92%8C%E4%BC%9A%E8%AE%AE"><span class="toc-number">1.1.</span> <span class="toc-text"> 期刊和会议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%9F%E5%88%8A"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 期刊</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%91%97%E5%90%8D%E6%9C%9F%E5%88%8A-cns"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 著名期刊: CNS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%91%97%E5%90%8D%E7%9A%84%E7%B4%A2%E5%BC%95"><span class="toc-number">1.1.1.2.</span> <span class="toc-text"> 著名的索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%B1%E5%93%8D%E5%9B%A0%E5%AD%90%E5%92%8C%E8%AE%BA%E6%96%87%E7%9A%84%E5%88%86%E5%8C%BA"><span class="toc-number">1.1.1.3.</span> <span class="toc-text"> 影响因子和论文的分区</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%9A%E8%AE%AE"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 会议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cs%E4%B8%AD%E7%9A%84%E6%9C%9F%E5%88%8A%E5%92%8C%E4%BC%9A%E8%AE%AE"><span class="toc-number">1.1.3.</span> <span class="toc-text"> CS中的期刊和会议</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E7%9A%84%E5%8F%91%E8%A1%A8"><span class="toc-number">2.</span> <span class="toc-text"> 论文的发表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%95%E7%A8%BF%E4%BD%9C%E8%80%85"><span class="toc-number">2.1.</span> <span class="toc-text"> 投稿：作者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E6%94%B6%E6%96%B9%E6%9C%9F%E5%88%8A%E4%BC%9A%E8%AE%AE"><span class="toc-number">2.2.</span> <span class="toc-text"> 接收方：期刊&#x2F;会议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E5%AE%A1%E5%AE%A1%E7%A8%BF%E4%BA%BA"><span class="toc-number">2.3.</span> <span class="toc-text"> 评审：审稿人</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E8%A1%A8%E4%B8%8E%E4%BC%A0%E6%92%AD%E5%87%BA%E7%89%88%E7%A4%BE-%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">2.4.</span> <span class="toc-text"> 发表与传播：出版社、数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84cs%E9%A2%86%E5%9F%9F%E9%A1%B6%E4%BC%9A%E9%A1%B6%E5%88%8A"><span class="toc-number">2.5.</span> <span class="toc-text"> 常见的CS领域顶会&#x2F;顶刊</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E7%8C%AE%E7%9A%84%E9%98%85%E8%AF%BB"><span class="toc-number">3.</span> <span class="toc-text"> 文献的阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">4.</span> <span class="toc-text"> 结语</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Brief-Intro-to-%E6%96%87%E7%8C%AE"><span class="toc-number">1.</span> <span class="toc-text">Brief Intro. to 文献</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%9F%E5%88%8A%E5%92%8C%E4%BC%9A%E8%AE%AE"><span class="toc-number">1.1.</span> <span class="toc-text">期刊和会议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%9F%E5%88%8A"><span class="toc-number">1.1.1.</span> <span class="toc-text">期刊</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%91%97%E5%90%8D%E6%9C%9F%E5%88%8A-CNS"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">著名期刊: CNS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%91%97%E5%90%8D%E7%9A%84%E7%B4%A2%E5%BC%95"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">著名的索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%B1%E5%93%8D%E5%9B%A0%E5%AD%90%E5%92%8C%E8%AE%BA%E6%96%87%E7%9A%84%E5%88%86%E5%8C%BA"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">影响因子和论文的分区</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%9A%E8%AE%AE"><span class="toc-number">1.1.2.</span> <span class="toc-text">会议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CS%E4%B8%AD%E7%9A%84%E6%9C%9F%E5%88%8A%E5%92%8C%E4%BC%9A%E8%AE%AE"><span class="toc-number">1.1.3.</span> <span class="toc-text">CS中的期刊和会议</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E7%9A%84%E5%8F%91%E8%A1%A8"><span class="toc-number">2.</span> <span class="toc-text">论文的发表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%95%E7%A8%BF%EF%BC%9A%E4%BD%9C%E8%80%85"><span class="toc-number">2.1.</span> <span class="toc-text">投稿：作者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E6%94%B6%E6%96%B9%EF%BC%9A%E6%9C%9F%E5%88%8A-%E4%BC%9A%E8%AE%AE"><span class="toc-number">2.2.</span> <span class="toc-text">接收方：期刊&#x2F;会议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E5%AE%A1%EF%BC%9A%E5%AE%A1%E7%A8%BF%E4%BA%BA"><span class="toc-number">2.3.</span> <span class="toc-text">评审：审稿人</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E8%A1%A8%E4%B8%8E%E4%BC%A0%E6%92%AD%EF%BC%9A%E5%87%BA%E7%89%88%E7%A4%BE%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">2.4.</span> <span class="toc-text">发表与传播：出版社、数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84CS%E9%A2%86%E5%9F%9F%E9%A1%B6%E4%BC%9A-%E9%A1%B6%E5%88%8A"><span class="toc-number">2.5.</span> <span class="toc-text">常见的CS领域顶会&#x2F;顶刊</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E7%8C%AE%E7%9A%84%E9%98%85%E8%AF%BB"><span class="toc-number">3.</span> <span class="toc-text">文献的阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">4.</span> <span class="toc-text">结语</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -161,35 +177,28 @@
     <blockquote>
 <p>阅读文献的目的，一是了解<strong>state of art</strong>（最新技术），培养感觉和认知；二是为了获取解决问题的思路和方法。做研究最重要的是<strong>idea+解决方案</strong>，要产出自己新颖的idea需要不断阅读文献，了解state of art；解决方案有<strong>理论+实验</strong>，文献中他人的理论推理和实验设计思路也都值得学习。当idea明确问题已知时，更需要带着问题，在相关资料中寻找答案。</p>
 </blockquote>
-<h1 id="brief-intro-to-文献"><a class="markdownIt-Anchor" href="#brief-intro-to-文献"></a> Brief Intro. to 文献</h1>
-<p>文献（Literature），意思为有历史意义或研究价值的图书、期刊、典章。一篇论文的参考文献必须是权威资料，比如学术论文、专刊、政府文件等；百度百科、博客之类的都是不能直接当参考文献的。个人理解是，<strong>未经多名同行专家评审的内容，都是不够权威的</strong>，但是用心找找出处，总能找到权威，比如“文献”一词出自《论语·八佾》。</p>
-<p>常见的文献分类如下（<a target="_blank" rel="noopener" href="https://cpb-us-e1.wpmucdn.com/blogs.ntu.edu.sg/dist/7/881/files/2015/05/Chinese-Linguistics_Citation-Styles.pdf">国标 GB3469-83文献类型与文献载体代码</a>）：<br />
-<img width="400" src="literature-class.JPG" /></p>
-<h2 id="期刊和会议"><a class="markdownIt-Anchor" href="#期刊和会议"></a> 期刊和会议</h2>
-<p>从论文阅读和发表的角度来看，经常听到的中文词汇大致是<strong>期刊</strong>论文和<strong>会议</strong>论文，而相应的英文词汇则较为丰富：</p>
+<h1 id="Brief-Intro-to-文献"><a href="#Brief-Intro-to-文献" class="headerlink" title="Brief Intro. to 文献"></a>Brief Intro. to 文献</h1><p>文献（Literature），意思为有历史意义或研究价值的图书、期刊、典章。一篇论文的参考文献必须是权威资料，比如学术论文、专刊、政府文件等；百度百科、博客之类的都是不能直接当参考文献的。个人理解是，<strong>未经多名同行专家评审的内容，都是不够权威的</strong>，但是用心找找出处，总能找到权威，比如“文献”一词出自《论语·八佾》。</p>
+<p>常见的文献分类如下（<a target="_blank" rel="noopener" href="https://cpb-us-e1.wpmucdn.com/blogs.ntu.edu.sg/dist/7/881/files/2015/05/Chinese-Linguistics_Citation-Styles.pdf">国标 GB3469-83文献类型与文献载体代码</a>）：<br><img width="400" src="literature-class.JPG" /></p>
+<h2 id="期刊和会议"><a href="#期刊和会议" class="headerlink" title="期刊和会议"></a>期刊和会议</h2><p>从论文阅读和发表的角度来看，经常听到的中文词汇大致是<strong>期刊</strong>论文和<strong>会议</strong>论文，而相应的英文词汇则较为丰富：</p>
 <ul>
 <li>Transactions, Journal, Magzine, Letter</li>
-<li>Proceedings, Conference, Symposium, Workshop, Meetings, Events
-<ul>
+<li>Proceedings, Conference, Symposium, Workshop, Meetings, Events<ul>
 <li>Oral, Poster</li>
 </ul>
 </li>
 </ul>
-<h3 id="期刊"><a class="markdownIt-Anchor" href="#期刊"></a> 期刊</h3>
-<p>可参考链接：<a target="_blank" rel="noopener" href="https://www.acm.org/publications/about-publications">ACM About Publications</a>、<a target="_blank" rel="noopener" href="https://academia.stackexchange.com/questions/13960/difference-between-transactions-and-journal">StackExchange - transactions and journal</a>、<a target="_blank" rel="noopener" href="https://www.quora.com/How-are-IEEE-Journals-Magazines-Letters-and-Transactions-different-from-each-other">quora - ieee</a>、<a target="_blank" rel="noopener" href="https://xujinzh.github.io/2020/10/09/journal-or-transactions/">各类期刊的区别</a></p>
+<h3 id="期刊"><a href="#期刊" class="headerlink" title="期刊"></a>期刊</h3><p>可参考链接：<a target="_blank" rel="noopener" href="https://www.acm.org/publications/about-publications">ACM About Publications</a>、<a target="_blank" rel="noopener" href="https://academia.stackexchange.com/questions/13960/difference-between-transactions-and-journal">StackExchange - transactions and journal</a>、<a target="_blank" rel="noopener" href="https://www.quora.com/How-are-IEEE-Journals-Magazines-Letters-and-Transactions-different-from-each-other">quora - ieee</a>、<a target="_blank" rel="noopener" href="https://xujinzh.github.io/2020/10/09/journal-or-transactions/">各类期刊的区别</a></p>
 <ul>
 <li>Journal：期刊，学报。Transactions和Journal一样，但汇总的是会议上的论文。</li>
 <li>Magzine：杂志</li>
 <li>Letter：短文</li>
 </ul>
-<h4 id="著名期刊-cns"><a class="markdownIt-Anchor" href="#著名期刊-cns"></a> 著名期刊: CNS</h4>
-<ul>
+<h4 id="著名期刊-CNS"><a href="#著名期刊-CNS" class="headerlink" title="著名期刊: CNS"></a>著名期刊: CNS</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://www.cell.com/">Cell</a>：是由(Elsevier出版公司旗下的Cell Press发行。主要发表实验生物学领域中的最新研究发现。</li>
-<li><a target="_blank" rel="noopener" href="https://www.nature.com/">Nature</a>：英国的，首刊于1869年，涵盖生命科学、自然科学、临床医学、物理化学等领域。<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Nature_(journal)">维基百科: Nature</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.science.org/">Science</a>：美国的，首刊于1880年，刊载重大的原创性科学研究和科研综述，也发表与科学相关的新闻、关于科技政策及科学家感兴趣的事务的观点。<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%A7%91%E5%AD%A6_(%E6%9C%9F%E5%88%8A)">维基百科: Science</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.nature.com/">Nature</a>：英国的，首刊于1869年，涵盖生命科学、自然科学、临床医学、物理化学等领域。<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Nature_(journal">维基百科: Nature</a>)</li>
+<li><a target="_blank" rel="noopener" href="https://www.science.org/">Science</a>：美国的，首刊于1880年，刊载重大的原创性科学研究和科研综述，也发表与科学相关的新闻、关于科技政策及科学家感兴趣的事务的观点。<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%A7%91%E5%AD%A6_(%E6%9C%9F%E5%88%8A">维基百科: Science</a>)</li>
 </ul>
-<h4 id="著名的索引"><a class="markdownIt-Anchor" href="#著名的索引"></a> 著名的索引</h4>
-<p>关于索引（Index）：发论文要投稿，SCI并不是接收论文的地方，而是论文投给被SCI收录的期刊或会议，就能通过SCI数据库检索到。其他类似的索引也一样，著名的索引以下：</p>
+<h4 id="著名的索引"><a href="#著名的索引" class="headerlink" title="著名的索引"></a>著名的索引</h4><p>关于索引（Index）：发论文要投稿，SCI并不是接收论文的地方，而是论文投给被SCI收录的期刊或会议，就能通过SCI数据库检索到。其他类似的索引也一样，著名的索引以下：</p>
 <ul>
 <li>SCI（Science Citation Index）：包括有自然科学、生物、医学、农业、技术和行为科学等，主要侧重基础科学。</li>
 <li>SSCI（Social Science Citation Index）：内容覆盖包括人类学、法律、经济、历史、地理、心理学等55个领域。</li>
@@ -204,17 +213,14 @@
 <li><a target="_blank" rel="noopener" href="https://mjl.clarivate.com/">SCI 链接</a> ：可搜索期刊名称</li>
 </ul>
 </blockquote>
-<h4 id="影响因子和论文的分区"><a class="markdownIt-Anchor" href="#影响因子和论文的分区"></a> 影响因子和论文的分区</h4>
-<ul>
+<h4 id="影响因子和论文的分区"><a href="#影响因子和论文的分区" class="headerlink" title="影响因子和论文的分区"></a>影响因子和论文的分区</h4><ul>
 <li>影响因子（Impact Factor，IF）：指某一期刊的文章在特定年份或时期被引用的频率，是衡量学术期刊影响力的一个重要指标。由JCR每年定期发布。</li>
-<li><a target="_blank" rel="noopener" href="https://library.sut.edu.cn/nr.jsp?urltype=news.NewsContentUrl&amp;wbtreeid=5648&amp;wbnewsid=3174">论文的分区</a>：有<strong>中科院分区</strong>和<strong>JCR分区</strong>（又叫汤森路透分区）。
-<ul>
+<li><a target="_blank" rel="noopener" href="https://library.sut.edu.cn/nr.jsp?urltype=news.NewsContentUrl&amp;wbtreeid=5648&amp;wbnewsid=3174">论文的分区</a>：有<strong>中科院分区</strong>和<strong>JCR分区</strong>（又叫汤森路透分区）。<ul>
 <li>将所有SCI期刊按影响因子排序，都分为4个区。</li>
 </ul>
 </li>
 </ul>
-<h3 id="会议"><a class="markdownIt-Anchor" href="#会议"></a> 会议</h3>
-<p>会议，顾名思义，就是那个开会的会议。学术会议是同领域人聚集在一起，论文作者有机会做Presentation，主要目的是沟通、交流（social和show off）。向会议投稿，<strong>oral</strong>是有机会做口头的presentation；<strong>poster</strong>是作者贴海报在外面，有兴趣可以面谈</p>
+<h3 id="会议"><a href="#会议" class="headerlink" title="会议"></a>会议</h3><p>会议，顾名思义，就是那个开会的会议。学术会议是同领域人聚集在一起，论文作者有机会做Presentation，主要目的是沟通、交流（social和show off）。向会议投稿，<strong>oral</strong>是有机会做口头的presentation；<strong>poster</strong>是作者贴海报在外面，有兴趣可以面谈</p>
 <ul>
 <li>Conference：所有会议都能叫Conference，正式的会议，规模较大</li>
 <li>Symposium：研讨会，一般专指正式的学术会议，但规模较conference小一些,也有一个讨论主题。在某些学术会议的大conference下，会有各个具体研究领域的小symposium。</li>
@@ -222,27 +228,21 @@
 <li>Meetings：面谈，交换意见的小会</li>
 </ul>
 <p>会议一般是一年一次，Proceedings是会议之后的收录集</p>
-<h3 id="cs中的期刊和会议"><a class="markdownIt-Anchor" href="#cs中的期刊和会议"></a> CS中的期刊和会议</h3>
-<p>CS对期刊和会议的评级一般采用的是CCF推荐的表格，各个小方向期刊/会议的名录和等级很清晰，分为A/B/C。<a target="_blank" rel="noopener" href="https://www.ccf.org.cn/Academic_Evaluation/By_category/">链接在这里</a><br />
-同时，CS与其他学科不同，CS领域的会议&gt;期刊，而其他领域是期刊&gt;会议。</p>
-<h1 id="论文的发表"><a class="markdownIt-Anchor" href="#论文的发表"></a> 论文的发表</h1>
-<p>论文在完成之后，发表过程有如下的关键环节/人物/组织：</p>
+<h3 id="CS中的期刊和会议"><a href="#CS中的期刊和会议" class="headerlink" title="CS中的期刊和会议"></a>CS中的期刊和会议</h3><p>CS对期刊和会议的评级一般采用的是CCF推荐的表格，各个小方向期刊/会议的名录和等级很清晰，分为A/B/C。<a target="_blank" rel="noopener" href="https://www.ccf.org.cn/Academic_Evaluation/By_category/">链接在这里</a><br>同时，CS与其他学科不同，CS领域的会议&gt;期刊，而其他领域是期刊&gt;会议。</p>
+<h1 id="论文的发表"><a href="#论文的发表" class="headerlink" title="论文的发表"></a>论文的发表</h1><p>论文在完成之后，发表过程有如下的关键环节/人物/组织：</p>
 <ol>
 <li>投稿：作者</li>
 <li>接收方：期刊/会议（及其组织）</li>
 <li>评审：审稿人</li>
 <li>发表与传播：出版社、数据库</li>
 </ol>
-<h2 id="投稿作者"><a class="markdownIt-Anchor" href="#投稿作者"></a> 投稿：作者</h2>
-<p>论文的作者一般是高校或研究院的学生、老师、研究员</p>
+<h2 id="投稿：作者"><a href="#投稿：作者" class="headerlink" title="投稿：作者"></a>投稿：作者</h2><p>论文的作者一般是高校或研究院的学生、老师、研究员</p>
 <ul>
 <li>待补充：关于论文写作，作者排序、co-author的问题</li>
 </ul>
-<h2 id="接收方期刊会议"><a class="markdownIt-Anchor" href="#接收方期刊会议"></a> 接收方：期刊/会议</h2>
-<p>期刊/会议、审稿、发表都需要组织和组织者。会议会有一个Committee，有各种Chair。计算机相关的组织如下：</p>
+<h2 id="接收方：期刊-会议"><a href="#接收方：期刊-会议" class="headerlink" title="接收方：期刊/会议"></a>接收方：期刊/会议</h2><p>期刊/会议、审稿、发表都需要组织和组织者。会议会有一个Committee，有各种Chair。计算机相关的组织如下：</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://www.acm.org/">ACM（Association for Computing Machinery）</a>：美国计算机协会
-<ul>
+<li><a target="_blank" rel="noopener" href="https://www.acm.org/">ACM（Association for Computing Machinery）</a>：美国计算机协会<ul>
 <li>ACM旗下有很多个CS小方向的 <a target="_blank" rel="noopener" href="https://dl.acm.org/sigs">SIGs（Special Interest Groups）</a>。SIGs会组织很多会议，比如<strong>SIGGRAPH</strong>（SIGGRAPH本身是组织名，也是会议名）、<strong>CHI</strong>（SIGCHI是组织名，CHI是SIGCHI组织的一个会议）</li>
 <li>ACM国际大学生程序设计竞赛，即<strong>ICPC</strong>（International Collegiate Programming Contest）就是由ACM组织举办的</li>
 </ul>
@@ -250,16 +250,14 @@
 <li><a target="_blank" rel="noopener" href="https://www.ieee.org/">IEEE（Institute of Electrical and Electronics Engineers）</a>：电气与电子工程师协会</li>
 </ul>
 <p>这些组织都有自己对应的数据库，比如 <a target="_blank" rel="noopener" href="https://dl.acm.org/">ACM Digital Library</a> 和 <a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/Xplore/home.jsp">IEEE Xplore Digital Library</a>。一般高校都购买了这些资料，打开校园网可以免费浏览。</p>
-<h2 id="评审审稿人"><a class="markdownIt-Anchor" href="#评审审稿人"></a> 评审：审稿人</h2>
-<p>审稿意见通常为：</p>
+<h2 id="评审：审稿人"><a href="#评审：审稿人" class="headerlink" title="评审：审稿人"></a>评审：审稿人</h2><p>审稿意见通常为：</p>
 <ul>
 <li>Accepted（接收）</li>
 <li>Minor Revision（小修）</li>
 <li>Major Revision（大修）</li>
 <li>Reject（拒稿）</li>
 </ul>
-<h2 id="发表与传播出版社-数据库"><a class="markdownIt-Anchor" href="#发表与传播出版社-数据库"></a> 发表与传播：出版社、数据库</h2>
-<p>CS常见的出版社（参考CCF的推荐表）：</p>
+<h2 id="发表与传播：出版社、数据库"><a href="#发表与传播：出版社、数据库" class="headerlink" title="发表与传播：出版社、数据库"></a>发表与传播：出版社、数据库</h2><p>CS常见的出版社（参考CCF的推荐表）：</p>
 <ul>
 <li>ACM</li>
 <li>IEEE</li>
@@ -278,31 +276,26 @@
 <li><a target="_blank" rel="noopener" href="https://arxiv.org/">arxiv</a></li>
 <li><a target="_blank" rel="noopener" href="https://link.springer.com/">springer</a></li>
 </ul>
-<h2 id="常见的cs领域顶会顶刊"><a class="markdownIt-Anchor" href="#常见的cs领域顶会顶刊"></a> 常见的CS领域顶会/顶刊</h2>
-<p>CVPR、ICCV、ECCV、ICML、SIGMOD、SIGIR、ACL、NAACL、EMNLP、KDD、WWW、TOG、SIGGRAPH、CHI…</p>
+<h2 id="常见的CS领域顶会-顶刊"><a href="#常见的CS领域顶会-顶刊" class="headerlink" title="常见的CS领域顶会/顶刊"></a>常见的CS领域顶会/顶刊</h2><p>CVPR、ICCV、ECCV、ICML、SIGMOD、SIGIR、ACL、NAACL、EMNLP、KDD、WWW、TOG、SIGGRAPH、CHI… </p>
 <p><a target="_blank" rel="noopener" href="https://www.ccf.org.cn/Academic_Evaluation/By_category/">CCF等级划分（一个不错的参考）</a></p>
-<h1 id="文献的阅读"><a class="markdownIt-Anchor" href="#文献的阅读"></a> 文献的阅读</h1>
-<p>阅读文献的目的：</p>
+<h1 id="文献的阅读"><a href="#文献的阅读" class="headerlink" title="文献的阅读"></a>文献的阅读</h1><p>阅读文献的目的：</p>
 <ol>
 <li>了解<strong>state of art</strong>（最新技术）</li>
 <li>获取解决问题的思路和方法</li>
 </ol>
 <p>那阅读和收集文献就应该有两种不同的方法：</p>
 <ol>
-<li>目的不明确：学习或者休闲娱乐为主，可以是泛读、也可以是精读
-<ul>
+<li>目的不明确：学习或者休闲娱乐为主，可以是泛读、也可以是精读<ul>
 <li>可以按会议/期刊，从最新开始阅读，阅读的同时也要思考，学习休闲为主。</li>
 </ul>
 </li>
-<li>目的明确：学习、精读，带着问题找答案
-<ul>
+<li>目的明确：学习、精读，带着问题找答案<ul>
 <li>使用搜索引擎检索关键词</li>
 </ul>
 </li>
 </ol>
 <p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=IeaD0ZaUJ3Y">Youtube: How to read a paper</a></p>
-<h1 id="结语"><a class="markdownIt-Anchor" href="#结语"></a> 结语</h1>
-<p>自己新颖的idea从阅读的文献中来，解决方案也要从不断的阅读中学习。最终产出的论文只是研究成果的展现方式，而非研究成果本身。简而言之，广泛地阅读是不会错的。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>自己新颖的idea从阅读的文献中来，解决方案也要从不断的阅读中学习。最终产出的论文只是研究成果的展现方式，而非研究成果本身。简而言之，广泛地阅读是不会错的。</p>
 
   </div>
 </article>
@@ -328,7 +321,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#brief-intro-to-%E6%96%87%E7%8C%AE"><span class="toc-number">1.</span> <span class="toc-text"> Brief Intro. to 文献</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%9F%E5%88%8A%E5%92%8C%E4%BC%9A%E8%AE%AE"><span class="toc-number">1.1.</span> <span class="toc-text"> 期刊和会议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%9F%E5%88%8A"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 期刊</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%91%97%E5%90%8D%E6%9C%9F%E5%88%8A-cns"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 著名期刊: CNS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%91%97%E5%90%8D%E7%9A%84%E7%B4%A2%E5%BC%95"><span class="toc-number">1.1.1.2.</span> <span class="toc-text"> 著名的索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%B1%E5%93%8D%E5%9B%A0%E5%AD%90%E5%92%8C%E8%AE%BA%E6%96%87%E7%9A%84%E5%88%86%E5%8C%BA"><span class="toc-number">1.1.1.3.</span> <span class="toc-text"> 影响因子和论文的分区</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%9A%E8%AE%AE"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 会议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cs%E4%B8%AD%E7%9A%84%E6%9C%9F%E5%88%8A%E5%92%8C%E4%BC%9A%E8%AE%AE"><span class="toc-number">1.1.3.</span> <span class="toc-text"> CS中的期刊和会议</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E7%9A%84%E5%8F%91%E8%A1%A8"><span class="toc-number">2.</span> <span class="toc-text"> 论文的发表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%95%E7%A8%BF%E4%BD%9C%E8%80%85"><span class="toc-number">2.1.</span> <span class="toc-text"> 投稿：作者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E6%94%B6%E6%96%B9%E6%9C%9F%E5%88%8A%E4%BC%9A%E8%AE%AE"><span class="toc-number">2.2.</span> <span class="toc-text"> 接收方：期刊&#x2F;会议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E5%AE%A1%E5%AE%A1%E7%A8%BF%E4%BA%BA"><span class="toc-number">2.3.</span> <span class="toc-text"> 评审：审稿人</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E8%A1%A8%E4%B8%8E%E4%BC%A0%E6%92%AD%E5%87%BA%E7%89%88%E7%A4%BE-%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">2.4.</span> <span class="toc-text"> 发表与传播：出版社、数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84cs%E9%A2%86%E5%9F%9F%E9%A1%B6%E4%BC%9A%E9%A1%B6%E5%88%8A"><span class="toc-number">2.5.</span> <span class="toc-text"> 常见的CS领域顶会&#x2F;顶刊</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E7%8C%AE%E7%9A%84%E9%98%85%E8%AF%BB"><span class="toc-number">3.</span> <span class="toc-text"> 文献的阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">4.</span> <span class="toc-text"> 结语</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Brief-Intro-to-%E6%96%87%E7%8C%AE"><span class="toc-number">1.</span> <span class="toc-text">Brief Intro. to 文献</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%9F%E5%88%8A%E5%92%8C%E4%BC%9A%E8%AE%AE"><span class="toc-number">1.1.</span> <span class="toc-text">期刊和会议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%9F%E5%88%8A"><span class="toc-number">1.1.1.</span> <span class="toc-text">期刊</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%91%97%E5%90%8D%E6%9C%9F%E5%88%8A-CNS"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">著名期刊: CNS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%91%97%E5%90%8D%E7%9A%84%E7%B4%A2%E5%BC%95"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">著名的索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%B1%E5%93%8D%E5%9B%A0%E5%AD%90%E5%92%8C%E8%AE%BA%E6%96%87%E7%9A%84%E5%88%86%E5%8C%BA"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">影响因子和论文的分区</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%9A%E8%AE%AE"><span class="toc-number">1.1.2.</span> <span class="toc-text">会议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CS%E4%B8%AD%E7%9A%84%E6%9C%9F%E5%88%8A%E5%92%8C%E4%BC%9A%E8%AE%AE"><span class="toc-number">1.1.3.</span> <span class="toc-text">CS中的期刊和会议</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E7%9A%84%E5%8F%91%E8%A1%A8"><span class="toc-number">2.</span> <span class="toc-text">论文的发表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%95%E7%A8%BF%EF%BC%9A%E4%BD%9C%E8%80%85"><span class="toc-number">2.1.</span> <span class="toc-text">投稿：作者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E6%94%B6%E6%96%B9%EF%BC%9A%E6%9C%9F%E5%88%8A-%E4%BC%9A%E8%AE%AE"><span class="toc-number">2.2.</span> <span class="toc-text">接收方：期刊&#x2F;会议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E5%AE%A1%EF%BC%9A%E5%AE%A1%E7%A8%BF%E4%BA%BA"><span class="toc-number">2.3.</span> <span class="toc-text">评审：审稿人</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E8%A1%A8%E4%B8%8E%E4%BC%A0%E6%92%AD%EF%BC%9A%E5%87%BA%E7%89%88%E7%A4%BE%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">2.4.</span> <span class="toc-text">发表与传播：出版社、数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84CS%E9%A2%86%E5%9F%9F%E9%A1%B6%E4%BC%9A-%E9%A1%B6%E5%88%8A"><span class="toc-number">2.5.</span> <span class="toc-text">常见的CS领域顶会&#x2F;顶刊</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E7%8C%AE%E7%9A%84%E9%98%85%E8%AF%BB"><span class="toc-number">3.</span> <span class="toc-text">文献的阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">4.</span> <span class="toc-text">结语</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

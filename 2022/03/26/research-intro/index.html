@@ -52,7 +52,23 @@
     
 	<!-- mathjax -->
 	
-<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="ZHAO.Z" type="application/atom+xml">
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']],
+        displayMath: [ ['$$','$$'] ],
+        processEscapes: true
+			},
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="ZHAO.Z" type="application/atom+xml">
 </head>
 
 <body class="max-width mx-auto px3 ltr">
@@ -110,7 +126,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%91%E7%A0%94"><span class="toc-number">1.</span> <span class="toc-text"> 科研</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%91%E5%AD%A6-science"><span class="toc-number">2.</span> <span class="toc-text"> 科学 Science</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%A7%91%E5%AD%A6-vs-%E5%BA%94%E7%94%A8%E7%A7%91%E5%AD%A6"><span class="toc-number">2.1.</span> <span class="toc-text"> 基础科学 vs. 应用科学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E5%AD%A6%E7%A7%91"><span class="toc-number">2.2.</span> <span class="toc-text"> 交叉学科</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AC%E7%A7%91%E5%AD%A6-vs-%E8%BD%AF%E7%A7%91%E5%AD%A6"><span class="toc-number">2.3.</span> <span class="toc-text"> 硬科学 vs. 软科学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-qa%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E7%A7%91%E5%AD%A6"><span class="toc-number">2.4.</span> <span class="toc-text"> 总结 Q&amp;A：计算机科学与科学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#q1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E7%A7%91%E7%A0%94"><span class="toc-number">2.4.1.</span> <span class="toc-text"> Q1：计算机科学与科研？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#q2%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%98%AF%E5%AE%9E%E9%AA%8C%E7%A7%91%E5%AD%A6%E5%90%97"><span class="toc-number">2.4.2.</span> <span class="toc-text"> Q2：深度学习是实验科学吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#q3%E5%9B%BE%E5%BD%A2%E5%AD%A6-%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">2.4.3.</span> <span class="toc-text"> Q3：图形学、体系结构、计算机网络？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#q4%E6%88%91%E6%89%80%E5%81%9A%E7%9A%84vis-hci"><span class="toc-number">2.4.4.</span> <span class="toc-text"> Q4：我所做的VIS &amp; HCI？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#q5%E4%BB%80%E4%B9%88%E5%8F%AB%E7%A7%91%E7%A0%94%E8%AE%AD%E7%BB%83"><span class="toc-number">2.4.5.</span> <span class="toc-text"> Q5：什么叫科研训练？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#q6%E7%A7%91%E7%A0%94%E5%92%8C%E5%B7%A5%E7%A8%8B"><span class="toc-number">2.4.6.</span> <span class="toc-text"> Q6：科研和工程？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6-research"><span class="toc-number">3.</span> <span class="toc-text"> 研究 Research</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">4.</span> <span class="toc-text"> 结语</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%91%E7%A0%94"><span class="toc-number">1.</span> <span class="toc-text">科研</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%91%E5%AD%A6-Science"><span class="toc-number">2.</span> <span class="toc-text">科学 Science</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%A7%91%E5%AD%A6-vs-%E5%BA%94%E7%94%A8%E7%A7%91%E5%AD%A6"><span class="toc-number">2.1.</span> <span class="toc-text">基础科学 vs. 应用科学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E5%AD%A6%E7%A7%91"><span class="toc-number">2.2.</span> <span class="toc-text">交叉学科</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AC%E7%A7%91%E5%AD%A6-vs-%E8%BD%AF%E7%A7%91%E5%AD%A6"><span class="toc-number">2.3.</span> <span class="toc-text">硬科学 vs. 软科学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-Q-amp-A%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E7%A7%91%E5%AD%A6"><span class="toc-number">2.4.</span> <span class="toc-text">总结 Q&amp;A：计算机科学与科学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q1%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E7%A7%91%E7%A0%94%EF%BC%9F"><span class="toc-number">2.4.1.</span> <span class="toc-text">Q1：计算机科学与科研？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q2%EF%BC%9A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%98%AF%E5%AE%9E%E9%AA%8C%E7%A7%91%E5%AD%A6%E5%90%97%EF%BC%9F"><span class="toc-number">2.4.2.</span> <span class="toc-text">Q2：深度学习是实验科学吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q3%EF%BC%9A%E5%9B%BE%E5%BD%A2%E5%AD%A6%E3%80%81%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%9F"><span class="toc-number">2.4.3.</span> <span class="toc-text">Q3：图形学、体系结构、计算机网络？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q4%EF%BC%9A%E6%88%91%E6%89%80%E5%81%9A%E7%9A%84VIS-amp-HCI%EF%BC%9F"><span class="toc-number">2.4.4.</span> <span class="toc-text">Q4：我所做的VIS &amp; HCI？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q5%EF%BC%9A%E4%BB%80%E4%B9%88%E5%8F%AB%E7%A7%91%E7%A0%94%E8%AE%AD%E7%BB%83%EF%BC%9F"><span class="toc-number">2.4.5.</span> <span class="toc-text">Q5：什么叫科研训练？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q6%EF%BC%9A%E7%A7%91%E7%A0%94%E5%92%8C%E5%B7%A5%E7%A8%8B%EF%BC%9F"><span class="toc-number">2.4.6.</span> <span class="toc-text">Q6：科研和工程？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6-Research"><span class="toc-number">3.</span> <span class="toc-text">研究 Research</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">4.</span> <span class="toc-text">结语</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -160,13 +176,11 @@
 
   <div class="content" itemprop="articleBody">
     <blockquote>
-<p>即将进入Graduate Study的阶段，对<strong>研究</strong>二字不再是少时的仰望，却也有不少失望，大概原因是<strong>科幻/魔幻/奇幻</strong>作品看太多了，脑子不大正常了。害，忘不掉的儒尔凡尔纳、哆啦A梦、变形金刚、哈利波特和钢铁侠，甚至还有铠甲勇士、果宝特攻、猪猪侠、奥特曼、巴啦啦小魔仙… 幻想就是用来被打破的 吧 😃</p>
+<p>即将进入Graduate Study的阶段，对<strong>研究</strong>二字不再是少时的仰望，却也有不少失望，大概原因是<strong>科幻/魔幻/奇幻</strong>作品看太多了，脑子不大正常了。害，忘不掉的儒尔凡尔纳、哆啦A梦、变形金刚、哈利波特和钢铁侠，甚至还有铠甲勇士、果宝特攻、猪猪侠、奥特曼、巴啦啦小魔仙… 幻想就是用来被打破的 吧 :) </p>
 <p>这次准备写一个系列博客，关于研究的研究——Introduction to Research (CS)，记录本人研究的研究历程与思考。不是大佬，纯小白一个，但… 小白的碎碎念也很有意思哦。毕竟，<strong>对研究都不研究研究，又怎么做研究呢？</strong></p>
 </blockquote>
-<h1 id="科研"><a class="markdownIt-Anchor" href="#科研"></a> 科研</h1>
-<p>科学研究（Scientific Research），简称科研，官方解释到处都是，这里就不提了。这里重点要说的是<strong>科学</strong>（Science）和<strong>研究</strong>（Research）。</p>
-<h1 id="科学-science"><a class="markdownIt-Anchor" href="#科学-science"></a> 科学 Science</h1>
-<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%A7%91%E5%AD%A6">科学</a>（英语：science，词源为拉丁语：scientia，意为“知识”）是一种系统性的知识体系，它<strong>积累</strong>和<strong>组织</strong>并<strong>可检验</strong>有关于宇宙的解释和预测。科学强调预测结果的<strong>具体性</strong>和<strong>可证伪性</strong>。</p>
+<h1 id="科研"><a href="#科研" class="headerlink" title="科研"></a>科研</h1><p>科学研究（Scientific Research），简称科研，官方解释到处都是，这里就不提了。这里重点要说的是<strong>科学</strong>（Science）和<strong>研究</strong>（Research）。</p>
+<h1 id="科学-Science"><a href="#科学-Science" class="headerlink" title="科学 Science"></a>科学 Science</h1><p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%A7%91%E5%AD%A6">科学</a>（英语：science，词源为拉丁语：scientia，意为“知识”）是一种系统性的知识体系，它<strong>积累</strong>和<strong>组织</strong>并<strong>可检验</strong>有关于宇宙的解释和预测。科学强调预测结果的<strong>具体性</strong>和<strong>可证伪性</strong>。</p>
 <p>现代科学三大分支：<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%87%AA%E7%84%B6%E7%A7%91%E5%AD%A6">形式科学（Formal science）</a>、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%87%AA%E7%84%B6%E7%A7%91%E5%AD%A6">自然科学（Natural Science）</a>、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6">社会科学（Social Science）</a>。</p>
 <ul>
 <li>形式科学：主要研究对象为抽象形态的科学。包括数学、逻辑、统计学、信息论、博弈论、理论计算机（TCS）等。</li>
@@ -174,22 +188,18 @@
 <li>社会科学：用科学的方法，研究人类社会的种种现象。包括包含了心理学、语言学、犯罪学、教育学、法律学、政治学、经济学及商学、社会学等。</li>
 </ul>
 <p>其中，<strong>自然科学</strong>和<strong>社会科学</strong>属于<strong>经验科学</strong>（Empirical Science，也叫<strong>实证科学</strong>，<strong>实验科学</strong>），与之对应的叫<strong>理论科学</strong>。科学的具体发展过程与希腊哲学、文艺复兴等息息相关，详情可参考<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%A7%91%E5%AD%A6">维基百科 - 科学</a>。</p>
-<h2 id="基础科学-vs-应用科学"><a class="markdownIt-Anchor" href="#基础科学-vs-应用科学"></a> 基础科学 vs. 应用科学</h2>
-<ul>
-<li><strong>基础科学</strong>：以自然现象和物质运动形式为研究对象，探索自然界发展规律的科学。
-<ul>
+<h2 id="基础科学-vs-应用科学"><a href="#基础科学-vs-应用科学" class="headerlink" title="基础科学 vs. 应用科学"></a>基础科学 vs. 应用科学</h2><ul>
+<li><strong>基础科学</strong>：以自然现象和物质运动形式为研究对象，探索自然界发展规律的科学。<ul>
 <li>七大基础学科：数学、物理学、化学、生物学、天文学、地球科学、逻辑学</li>
 </ul>
 </li>
-<li><strong>应用科学</strong>：综合科学的理论成果，将其应用到实际问题上的科学。
-<ul>
+<li><strong>应用科学</strong>：综合科学的理论成果，将其应用到实际问题上的科学。<ul>
 <li>特征：方向性强，目的性明确，与实践活动的关系密切，且直接体现着人的需求。</li>
 <li>主要学科：计算机科学、运筹学、应用数学、数学经济等等</li>
 </ul>
 </li>
 </ul>
-<h2 id="交叉学科"><a class="markdownIt-Anchor" href="#交叉学科"></a> 交叉学科</h2>
-<p>随科学的发展，学科之间开始<strong>合作</strong>整合，衍生出新的交叉学科。例如：</p>
+<h2 id="交叉学科"><a href="#交叉学科" class="headerlink" title="交叉学科"></a>交叉学科</h2><p>随科学的发展，学科之间开始<strong>合作</strong>整合，衍生出新的交叉学科。例如：</p>
 <ul>
 <li>化学 + 物理学 = 物理化学和化学物理学</li>
 <li>化学 + 生物学 = 生物化学和化学生物学</li>
@@ -202,37 +212,29 @@
 <li>数学 + 计算机科学 + 艺术 + … = 图形学</li>
 </ul>
 <blockquote>
-<p><strong>A-&gt;B，A是B的基础，B是A的应用</strong>：<br />
-<img src="科学分类.JPG" /></p>
+<p><strong>A-&gt;B，A是B的基础，B是A的应用</strong>：<br><img src="科学分类.JPG" /></p>
 <p>查理芒格 —— <strong>全归因治学方法</strong>（The Fundamental Full Attribution Ethos of Hard Science）：学习任何一个领域的知识，一定要想办法找到这个知识最初的出处是什么，尤其是<strong>硬科学</strong>（Hard Science）知识的出处，当掌握了一个知识的出处之后，才能继续运用这个知识去进一步解决问题。 一方面学习人类犯的错误，另一方面也要学习最牛的人是怎么做的。</p>
-<p>我们需要掌握比所在学科更基础的学科的所有基本思想，这样看问题更深刻，解释问题更清晰。<br />
-<strong>看上去要学会的是B，实际需要学会的是A。</strong> 图灵是计算机科学之父，但他是英国数学家、逻辑学家</p>
+<p>我们需要掌握比所在学科更基础的学科的所有基本思想，这样看问题更深刻，解释问题更清晰。<br><strong>看上去要学会的是B，实际需要学会的是A。</strong> 图灵是计算机科学之父，但他是英国数学家、逻辑学家</p>
 </blockquote>
-<h2 id="硬科学-vs-软科学"><a class="markdownIt-Anchor" href="#硬科学-vs-软科学"></a> 硬科学 vs. 软科学</h2>
-<p>问：物理、化学、生物肯定是科学，那社会科学比如经济学是不是科学？<br />
-答：是软科学（Soft Science）。物理、化学、生物是硬科学（Hard Science）</p>
+<h2 id="硬科学-vs-软科学"><a href="#硬科学-vs-软科学" class="headerlink" title="硬科学 vs. 软科学"></a>硬科学 vs. 软科学</h2><p>问：物理、化学、生物肯定是科学，那社会科学比如经济学是不是科学？<br>答：是软科学（Soft Science）。物理、化学、生物是硬科学（Hard Science）</p>
 <p>硬科学和软科学是一种<strong>口语术语</strong>，用于根据所感知的方法的严谨性、准确性和客观性来比较科学领域。粗略地说，<strong>自然科学被认为是“硬的”</strong>（理科），而<strong>社会科学通常被描述为“软的”</strong>（文科）。</p>
-<h2 id="总结-qa计算机科学与科学"><a class="markdownIt-Anchor" href="#总结-qa计算机科学与科学"></a> 总结 Q&amp;A：计算机科学与科学</h2>
-<p>计算机科学（CS）属于<strong>应用科学</strong>。</p>
+<h2 id="总结-Q-amp-A：计算机科学与科学"><a href="#总结-Q-amp-A：计算机科学与科学" class="headerlink" title="总结 Q&amp;A：计算机科学与科学"></a>总结 Q&amp;A：计算机科学与科学</h2><p>计算机科学（CS）属于<strong>应用科学</strong>。</p>
 <p>理论计算机（TCS）方向属于形式科学，有着数学和抽象的本质，但动机来自实践和日常中的计算问题。它旨在理解计算的本质，并根据这种理解提供更有效率的方法。此领域需要强调更严格的数学。<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%90%86%E8%AB%96%E8%A8%88%E7%AE%97%E6%A9%9F%E7%A7%91%E5%AD%B8">维基百科</a></p>
-<h3 id="q1计算机科学与科研"><a class="markdownIt-Anchor" href="#q1计算机科学与科研"></a> Q1：计算机科学与科研？</h3>
-<p>一开始我总觉得科研、实验跟CS半毛钱关系没有，搭都搭不上边。原因：</p>
+<h3 id="Q1：计算机科学与科研？"><a href="#Q1：计算机科学与科研？" class="headerlink" title="Q1：计算机科学与科研？"></a>Q1：计算机科学与科研？</h3><p>一开始我总觉得科研、实验跟CS半毛钱关系没有，搭都搭不上边。原因：</p>
 <ol>
 <li>受曾经应试教育的影响，我理解的科研更倾向于纯粹的基础科学（尤其是特指自然科学）</li>
 <li>刚学CS就是写代码，总觉得，并不算是“实验”。打个比方，学数学1+1的时候，也不会觉得这是实验、是科研吧。</li>
 </ol>
 <p>但CS本身小方向很多，不同的应用方向、不同的交叉，都会导致对<strong>实验</strong>和<strong>理论</strong>的理解不完全相同。比如我们学的数据结构与算法，属于TCS，实验or理论？再比如，神经网络跑accuracy对比，实验or理论？因此，如果形式科学、社会科学的研究也能被成为科研，那CS的研究也一定算科研。</p>
-<h3 id="q2深度学习是实验科学吗"><a class="markdownIt-Anchor" href="#q2深度学习是实验科学吗"></a> Q2：深度学习是实验科学吗？</h3>
-<p>关于此问题，当前的观点不一：</p>
+<h3 id="Q2：深度学习是实验科学吗？"><a href="#Q2：深度学习是实验科学吗？" class="headerlink" title="Q2：深度学习是实验科学吗？"></a>Q2：深度学习是实验科学吗？</h3><p>关于此问题，当前的观点不一：</p>
 <ul>
 <li>是<strong>实验科学</strong></li>
-<li>不是科学：是一套不断变化的<strong>经验衍生</strong>的<strong>工程最佳实践</strong>。——<a target="_blank" rel="noopener" href="https://fchollet.com/">François Chollet<br />
-</a><br />
-<img width="500" src="dl-science.JPG" /></li>
+<li>不是科学：是一套不断变化的<strong>经验衍生</strong>的<strong>工程最佳实践</strong>。——<a target="_blank" rel="noopener" href="https://fchollet.com/">François Chollet
+</a><br><img width="500" src="dl-science.JPG" /></li>
 </ul>
 <p>我更赞同François Chollet的说法，毕竟CS是应用科学，深度学习图像识别、语义分析等也都与实际应用息息相关；而实验科学更多是自然界。但是深度学习中（尤其是相关论文中），既喜欢与自然界类比，比如神经网络、神经元一类名词，结论也是“实验”结果来的，所以说深度学习是实验科学，也不算错吧。</p>
 <p>如果从<strong>实验科学</strong>的角度看，<strong>神经网络</strong>跑出来的结果为什么正确？不用解释，因为实验结果如此。</p>
-<h3 id="q3图形学-体系结构-计算机网络"><a class="markdownIt-Anchor" href="#q3图形学-体系结构-计算机网络"></a> Q3：图形学、体系结构、计算机网络？</h3>
+<h3 id="Q3：图形学、体系结构、计算机网络？"><a href="#Q3：图形学、体系结构、计算机网络？" class="headerlink" title="Q3：图形学、体系结构、计算机网络？"></a>Q3：图形学、体系结构、计算机网络？</h3><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -249,13 +251,14 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>这样来看，这些方向涵盖了更多的Hard Science，对数学、物理的要求也比其他方向要高。但是也因为我们学生时代的大部分精力都在这些Hard Science上，具备基本的概念和理解，上手速度会比较快，但对普通学生来说也更不容易登顶。（毕竟也不是什么xxx奥赛冠军，同年龄段上差距就很明显了…）</p>
-<h3 id="q4我所做的vis-hci"><a class="markdownIt-Anchor" href="#q4我所做的vis-hci"></a> Q4：我所做的VIS &amp; HCI？</h3>
-<p>VIS（Visualization）和HCI（Human-Computer Interaction)，都是很明显的<strong>应用科学</strong>、<strong>交叉学科</strong>。VIS中的科学可视化（SciVis）归属于图形学，也是很Hard的，而信息可视化（InfoVis）就比较Soft了。同样，HCI中，跟自动化、机器人那些相关的也是非常Hard的，软件相关就稍显Soft了。</p>
+<h3 id="Q4：我所做的VIS-amp-HCI？"><a href="#Q4：我所做的VIS-amp-HCI？" class="headerlink" title="Q4：我所做的VIS &amp; HCI？"></a>Q4：我所做的VIS &amp; HCI？</h3><p>VIS（Visualization）和HCI（Human-Computer Interaction)，都是很明显的<strong>应用科学</strong>、<strong>交叉学科</strong>。VIS中的科学可视化（SciVis）归属于图形学，也是很Hard的，而信息可视化（InfoVis）就比较Soft了。同样，HCI中，跟自动化、机器人那些相关的也是非常Hard的，软件相关就稍显Soft了。</p>
 <p>属于目前本人涉猎范围的：InfoVis及其相关的HCI：</p>
 <ul>
 <li>从Soft和Hard来看：与大部分学科都有交叉，甚至是很需要考虑Soft Science的方面</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -272,9 +275,9 @@
 </tr>
 </tbody>
 </table>
+</div>
 <ul>
-<li>从现代科学三大分支来看：形式科学、自然科学、社会科学，也是均有涉猎
-<ul>
+<li>从现代科学三大分支来看：形式科学、自然科学、社会科学，也是均有涉猎<ul>
 <li>与之对应来看，是：<strong>理论</strong>与<strong>实验</strong>结合，因此至少也该同时具备上述所有学科的理论与实验的<strong>基本</strong>思想，才有可能更上一个台阶。但是显然，在我们的教育体系中，Soft+Hard是比较缺失的。</li>
 <li>从事这个方向，Soft+Hard是基本思想，追求更多的是整体知识的<strong>广度</strong>和某个方向知识的<strong>深度</strong>，即所谓“T”型人才。</li>
 </ul>
@@ -283,14 +286,12 @@
 <blockquote>
 <p>但本人观点不变，这样的愿景是美好的，但现实可能就是大杂烩一锅炖、万精油。毕竟<strong>艺术的前提是技术足够，跨界的前提是本工扎实</strong>。在追求跨界的同时，知识（最起码是基础知识）必须要牢固且足够，某个方向必须精通，至少Soft、Hard里得通一个吧。</p>
 </blockquote>
-<h3 id="q5什么叫科研训练"><a class="markdownIt-Anchor" href="#q5什么叫科研训练"></a> Q5：什么叫科研训练？</h3>
-<ol>
+<h3 id="Q5：什么叫科研训练？"><a href="#Q5：什么叫科研训练？" class="headerlink" title="Q5：什么叫科研训练？"></a>Q5：什么叫科研训练？</h3><ol>
 <li>基础足够，且较为扎实。A-&gt;B的A也比较熟悉</li>
 <li>具备收集资料的能力，思维和语言也有逻辑性</li>
 <li>思考有深度，能提出有水平的问题，也能提出解决方案</li>
 </ol>
-<h3 id="q6科研和工程"><a class="markdownIt-Anchor" href="#q6科研和工程"></a> Q6：科研和工程？</h3>
-<p>不可分割，无明显界限：工程=应用，CS∈应用科学。大厂能把应用科学的研究成果量产投入使用，并进一步用到极致，还能接着产生更加具体、实际、紧急的重大问题。</p>
+<h3 id="Q6：科研和工程？"><a href="#Q6：科研和工程？" class="headerlink" title="Q6：科研和工程？"></a>Q6：科研和工程？</h3><p>不可分割，无明显界限：工程=应用，CS∈应用科学。大厂能把应用科学的研究成果量产投入使用，并进一步用到极致，还能接着产生更加具体、实际、紧急的重大问题。</p>
 <p>该问题的派生问题：<strong>横向</strong>与<strong>纵向</strong>？</p>
 <ul>
 <li>纵向：资金来源为国家、部委等的财政计划</li>
@@ -298,8 +299,7 @@
 </ul>
 <p>但学生间所指的横纵好像就是发不发论文一说，总觉得<strong>横=码农打工=不能发论文</strong>。因为我们实验室的横向其实都有论文要求，所以我觉得也不存在做横向不发论文一说。并且CS本身就是应用科学，不投入到工程中使用，还有什么价值呢？</p>
 <p>因此我认为，区分<strong>科研和工程</strong>就跟区分<strong>横纵</strong>一样毫无意义。</p>
-<h1 id="研究-research"><a class="markdownIt-Anchor" href="#研究-research"></a> 研究 Research</h1>
-<blockquote>
+<h1 id="研究-Research"><a href="#研究-Research" class="headerlink" title="研究 Research"></a>研究 Research</h1><blockquote>
 <p>维基百科：研究，是用主动和系统方式的过程，是为了发现、解释或校正事实、事件、行为、或理论，或把这样事实、法则或理论作出实际应用。</p>
 </blockquote>
 <p>研究是…</p>
@@ -309,7 +309,7 @@
 <li>一种兴趣爱好，是一个人和几群人一起玩的共同爱好</li>
 <li>一种追赶潮流的时尚文化</li>
 <li>一种拼接创造的艺术</li>
-<li>一种实事求是的炫耀（论文和会议上的presentation = show off）😃</li>
+<li>一种实事求是的炫耀（论文和会议上的presentation = show off）:)</li>
 </ol>
 <p>以作曲家写一个作品来说：</p>
 <ol>
@@ -320,63 +320,20 @@
 <li>要把存在的每一个音符组成不一样的句子和篇章，表达不同的思想和情感</li>
 <li>把作品展示给大众，以期广为流传</li>
 </ol>
-<p>不难对照出，研究的过程（循环往复1-6）：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">顺序</th>
-<th style="text-align:center">研究</th>
-<th style="text-align:center">作曲</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">读书找兴趣</td>
-<td style="text-align:center">听曲子、分析谱子</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">自然产生的idea</td>
-<td style="text-align:center">认真生活有感而发~</td>
-</tr>
-<tr>
-<td style="text-align:center">3</td>
-<td style="text-align:center">自然产生的解决思路</td>
-<td style="text-align:center">乐理知识+积累的作品</td>
-</tr>
-<tr>
-<td style="text-align:center">4</td>
-<td style="text-align:center">查看更相关的文章</td>
-<td style="text-align:center">多听、多分析类似的题材以参考思路</td>
-</tr>
-<tr>
-<td style="text-align:center">5</td>
-<td style="text-align:center">整理资料和逻辑线，从叙事到证明</td>
-<td style="text-align:center">精心设计乐句、段落、乐章</td>
-</tr>
-<tr>
-<td style="text-align:center">6</td>
-<td style="text-align:center">写成论文，推广出去，show off!!!</td>
-<td style="text-align:center">出版&amp;上线！准备接收批评和赞美！</td>
-</tr>
-</tbody>
-</table>
+<p>不难对照出，研究的过程（循环往复1-6）：<br>|顺序|研究|作曲|<br>|:—:|:—:|:—:|<br>|1|读书找兴趣|听曲子、分析谱子|<br>|2|自然产生的idea|认真生活有感而发~|<br>|3|自然产生的解决思路|乐理知识+积累的作品|<br>|4|查看更相关的文章|多听、多分析类似的题材以参考思路|<br>|5|整理资料和逻辑线，从叙事到证明|精心设计乐句、段落、乐章|<br>|6|写成论文，推广出去，show off!!!|出版&amp;上线！准备接收批评和赞美！|</p>
 <p>这样看，单论<strong>研究</strong>二字，门槛其实也并没有那么高呢，我倒是觉得跟它距离最近的科目叫<strong>语文</strong>，毕竟阅读理解、评论概述、分点作答，这可都是语文的精髓。只不过每个行业的门槛各有不同，领域内的专业知识也多种多样，让作曲家去研究数学，也蛮奇怪的。研究门槛不高，核心是做语文题的思维习惯和思考方式；特定方向上的研究，都是一些人的兴趣爱好，又怎能以门槛来衡量呢？强行区分Soft、Hard和鄙视链，好像也没什么意义？如果硬要说有门槛，那就一定是热情passion。<strong>我认为，正常的研究应该属于生活，属于真正刻入DNA的习惯和兴趣特长，这绝对不是、也不应该是一种刻意熬夜硬卷的负担。</strong></p>
-<p>我就很喜欢ACM <strong>SIG</strong>这个前缀，Special Interest Groups，<strong>特殊兴趣小组</strong>。可惜了ACM(Association for Computing Machinery)只是计算机协会，否则SIG这个前缀就该被大力推广应用在方方面面，比如SIGART、SIGMUSIC、SIGDANCE、SIGCLOTH、SIGBadminton，这些都蛮好的嘛，给每个小团体都冠上一个SIG。刚查了一下，竟然还真的有<strong>SIGART</strong>，只不过现在叫<a target="_blank" rel="noopener" href="https://sigai.acm.org/main/">SIGAI</a>，<em>可能ART = Artificial</em>，也算是今天的一大发现 😃</p>
+<p>我就很喜欢ACM <strong>SIG</strong>这个前缀，Special Interest Groups，<strong>特殊兴趣小组</strong>。可惜了ACM(Association for Computing Machinery)只是计算机协会，否则SIG这个前缀就该被大力推广应用在方方面面，比如SIGART、SIGMUSIC、SIGDANCE、SIGCLOTH、SIGBadminton，这些都蛮好的嘛，给每个小团体都冠上一个SIG。刚查了一下，竟然还真的有<strong>SIGART</strong>，只不过现在叫<a target="_blank" rel="noopener" href="https://sigai.acm.org/main/">SIGAI</a>，<em>可能ART = Artificial</em>，也算是今天的一大发现 :)</p>
 <p><em>偏个题多评论一句——，要我说，音乐作品也应该跟paper一样有个references的部分，毕竟根本不存在绝对的原创。现在这么多的空耳鉴抄袭，其实也不好说是参考还是抄袭，确实不严谨。有个references，还能让大家丰富一下知识量，拓宽认知，多好。</em></p>
-<h1 id="结语"><a class="markdownIt-Anchor" href="#结语"></a> 结语</h1>
-<ol>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><ol>
 <li>科学种类很多，CS是应用科学，包含实验与理论。</li>
 <li>研究的本质是兴趣 + 写作；门槛是兴趣 + 基础知识 + 天时地利人和。</li>
-<li>科研本身并不神秘，它只不过是集中了一群有共同兴趣爱好的人（SIGs、课题组），共同做一些好玩的事情。
-<ul>
+<li>科研本身并不神秘，它只不过是集中了一群有共同兴趣爱好的人（SIGs、课题组），共同做一些好玩的事情。<ul>
 <li>当中较难的是idea和解决方案。idea能从侧面反映出某人的知识和思想的广度与深度，是把人分为三六九等的关键。即便是同方向、同等级的论文，idea与idea之间的差距依旧是肉眼可见。</li>
 <li>有趣的从来都不是单纯的解决方案、论文数量，而是那个<strong>旗帜鲜明</strong>的<code>idea + 解决方案</code></li>
 </ul>
 </li>
 </ol>
-<p>世上无难事，只怕有心人。既已知现状如此，又为何原地踏步担忧未来？研究和研究的研究，要共同前进啊 😃</p>
+<p>世上无难事，只怕有心人。既已知现状如此，又为何原地踏步担忧未来？研究和研究的研究，要共同前进啊 :)</p>
 
   </div>
 </article>
@@ -402,7 +359,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%91%E7%A0%94"><span class="toc-number">1.</span> <span class="toc-text"> 科研</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%91%E5%AD%A6-science"><span class="toc-number">2.</span> <span class="toc-text"> 科学 Science</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%A7%91%E5%AD%A6-vs-%E5%BA%94%E7%94%A8%E7%A7%91%E5%AD%A6"><span class="toc-number">2.1.</span> <span class="toc-text"> 基础科学 vs. 应用科学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E5%AD%A6%E7%A7%91"><span class="toc-number">2.2.</span> <span class="toc-text"> 交叉学科</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AC%E7%A7%91%E5%AD%A6-vs-%E8%BD%AF%E7%A7%91%E5%AD%A6"><span class="toc-number">2.3.</span> <span class="toc-text"> 硬科学 vs. 软科学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-qa%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E7%A7%91%E5%AD%A6"><span class="toc-number">2.4.</span> <span class="toc-text"> 总结 Q&amp;A：计算机科学与科学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#q1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E7%A7%91%E7%A0%94"><span class="toc-number">2.4.1.</span> <span class="toc-text"> Q1：计算机科学与科研？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#q2%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%98%AF%E5%AE%9E%E9%AA%8C%E7%A7%91%E5%AD%A6%E5%90%97"><span class="toc-number">2.4.2.</span> <span class="toc-text"> Q2：深度学习是实验科学吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#q3%E5%9B%BE%E5%BD%A2%E5%AD%A6-%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">2.4.3.</span> <span class="toc-text"> Q3：图形学、体系结构、计算机网络？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#q4%E6%88%91%E6%89%80%E5%81%9A%E7%9A%84vis-hci"><span class="toc-number">2.4.4.</span> <span class="toc-text"> Q4：我所做的VIS &amp; HCI？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#q5%E4%BB%80%E4%B9%88%E5%8F%AB%E7%A7%91%E7%A0%94%E8%AE%AD%E7%BB%83"><span class="toc-number">2.4.5.</span> <span class="toc-text"> Q5：什么叫科研训练？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#q6%E7%A7%91%E7%A0%94%E5%92%8C%E5%B7%A5%E7%A8%8B"><span class="toc-number">2.4.6.</span> <span class="toc-text"> Q6：科研和工程？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6-research"><span class="toc-number">3.</span> <span class="toc-text"> 研究 Research</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">4.</span> <span class="toc-text"> 结语</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%91%E7%A0%94"><span class="toc-number">1.</span> <span class="toc-text">科研</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%91%E5%AD%A6-Science"><span class="toc-number">2.</span> <span class="toc-text">科学 Science</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%A7%91%E5%AD%A6-vs-%E5%BA%94%E7%94%A8%E7%A7%91%E5%AD%A6"><span class="toc-number">2.1.</span> <span class="toc-text">基础科学 vs. 应用科学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E5%AD%A6%E7%A7%91"><span class="toc-number">2.2.</span> <span class="toc-text">交叉学科</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AC%E7%A7%91%E5%AD%A6-vs-%E8%BD%AF%E7%A7%91%E5%AD%A6"><span class="toc-number">2.3.</span> <span class="toc-text">硬科学 vs. 软科学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-Q-amp-A%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E7%A7%91%E5%AD%A6"><span class="toc-number">2.4.</span> <span class="toc-text">总结 Q&amp;A：计算机科学与科学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q1%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E7%A7%91%E7%A0%94%EF%BC%9F"><span class="toc-number">2.4.1.</span> <span class="toc-text">Q1：计算机科学与科研？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q2%EF%BC%9A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%98%AF%E5%AE%9E%E9%AA%8C%E7%A7%91%E5%AD%A6%E5%90%97%EF%BC%9F"><span class="toc-number">2.4.2.</span> <span class="toc-text">Q2：深度学习是实验科学吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q3%EF%BC%9A%E5%9B%BE%E5%BD%A2%E5%AD%A6%E3%80%81%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%9F"><span class="toc-number">2.4.3.</span> <span class="toc-text">Q3：图形学、体系结构、计算机网络？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q4%EF%BC%9A%E6%88%91%E6%89%80%E5%81%9A%E7%9A%84VIS-amp-HCI%EF%BC%9F"><span class="toc-number">2.4.4.</span> <span class="toc-text">Q4：我所做的VIS &amp; HCI？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q5%EF%BC%9A%E4%BB%80%E4%B9%88%E5%8F%AB%E7%A7%91%E7%A0%94%E8%AE%AD%E7%BB%83%EF%BC%9F"><span class="toc-number">2.4.5.</span> <span class="toc-text">Q5：什么叫科研训练？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q6%EF%BC%9A%E7%A7%91%E7%A0%94%E5%92%8C%E5%B7%A5%E7%A8%8B%EF%BC%9F"><span class="toc-number">2.4.6.</span> <span class="toc-text">Q6：科研和工程？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6-Research"><span class="toc-number">3.</span> <span class="toc-text">研究 Research</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">4.</span> <span class="toc-text">结语</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
