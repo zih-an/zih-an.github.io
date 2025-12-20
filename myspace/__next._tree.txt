@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/a530ff228ec6d6dc.css","style"]
+:HL["/zih-an.github.io/_next/static/chunks/a530ff228ec6d6dc.css","style"]
 :HC["/",""]
-:HL["/_next/static/chunks/d6f544ff572f5642.css","style"]
-0:{"buildId":"3CRgLmeWO0SZy9RA9CDVB","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"myspace","paramType":null,"paramKey":"myspace","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+:HL["/zih-an.github.io/_next/static/chunks/d6f544ff572f5642.css","style"]
+0:{"buildId":"3-8oOlmMD7EHk9Qg5t2gT","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"myspace","paramType":null,"paramKey":"myspace","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
