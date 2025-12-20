@@ -1,4 +1,4 @@
 :HL["/_next/static/chunks/a530ff228ec6d6dc.css","style"]
 :HC["/",""]
 :HL["/_next/static/chunks/d6f544ff572f5642.css","style"]
-0:{"buildId":"0ET6kcXzOgvnPu6yrlU8g","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"myspace","paramType":null,"paramKey":"myspace","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"LwRq1DDDD9IqK06UmpeXL","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"myspace","paramType":null,"paramKey":"myspace","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
