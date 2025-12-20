@@ -1,8 +1,8 @@
-:HL["/zih-an.github.io/_next/static/chunks/a530ff228ec6d6dc.css","style"]
+:HL["/_next/static/chunks/a530ff228ec6d6dc.css","style"]
 :HC["/",""]
-:HL["/zih-an.github.io/_next/static/chunks/04875084bce90605.css","style"]
+:HL["/_next/static/chunks/04875084bce90605.css","style"]
 :HL["/assets/photo.jpg","image"]
 :HL["/assets/publications/offsetcrust_sig25.jpg","image"]
 :HL["/assets/publications/hessian23zhang_small.png","image"]
 :HL["/assets/sdu_logo.png","image"]
-0:{"buildId":"3-8oOlmMD7EHk9Qg5t2gT","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"0ET6kcXzOgvnPu6yrlU8g","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
