@@ -1,0 +1,8 @@
+:HL["/_next/static/css/f2033c3945f2cec4.css","style"]
+:HL["/_next/static/css/2316ba02e0981bc8.css","style"]
+:HL["/assets/blog/computer-system-overview/basic-logic.JPG","image"]
+:HL["/assets/blog/computer-system-overview/nvidia-cuda-cpu-gpu.jpg","image"]
+:HL["/assets/blog/computer-system-overview/intel-cpu-products.jpg","image"]
+:HL["/assets/blog/computer-system-overview/a-pixel.jpg","image"]
+:HL["/assets/blog/computer-system-overview/colorspace.png","image"]
+0:{"buildId":"NdFYhFiO9USqfiB1RclrG","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"blog","paramType":null,"paramKey":"blog","hasRuntimePrefetch":false,"slots":{"children":{"name":"slug","paramType":"d","paramKey":"computer-system-overview","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
