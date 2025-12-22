@@ -9,43 +9,50 @@
 
 <url>
   <loc>https://zih-an.github.io/</loc>
-  <lastmod>2025-12-22T15:37:43+00:00</lastmod>
+  <!-- <lastmod>2025-12-22T15:37:43+00:00</lastmod> -->
+  <lastmod>2025-12-22</lastmod>
   <priority>1.00</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>https://zih-an.github.io/blog</loc>
-  <lastmod>2025-12-22T15:37:43+00:00</lastmod>
+  <!-- <lastmod>2025-12-22T15:37:43+00:00</lastmod> -->
+  <lastmod>2025-12-22</lastmod>
   <priority>0.80</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>https://zih-an.github.io/myspace</loc>
-  <lastmod>2025-12-22T15:37:43+00:00</lastmod>
+  <!-- <lastmod>2025-12-22T15:37:43+00:00</lastmod> -->
+  <lastmod>2025-12-22</lastmod>
   <priority>0.80</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>https://zih-an.github.io/myCV.pdf</loc>
-  <lastmod>2025-12-22T15:37:43+00:00</lastmod>
+  <!-- <lastmod>2025-12-22T15:37:43+00:00</lastmod> -->
+  <lastmod>2025-12-22</lastmod>
   <priority>0.80</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>https://zih-an.github.io/offsetcrust/</loc>
-  <lastmod>2025-12-22T15:32:43+00:00</lastmod>
+  <!-- <lastmod>2025-12-22T15:32:43+00:00</lastmod> -->
+  <lastmod>2025-12-22</lastmod>
   <priority>0.80</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>https://zih-an.github.io/blog/computer-system-overview</loc>
-  <lastmod>2025-12-22T15:37:43+00:00</lastmod>
+  <!-- <lastmod>2025-12-22T15:37:43+00:00</lastmod> -->
+  <lastmod>2025-12-22</lastmod>
   <priority>0.64</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>https://zih-an.github.io/blog/DevOverview</loc>
-  <lastmod>2025-12-22T15:37:43+00:00</lastmod>
+  <!-- <lastmod>2025-12-22T15:37:43+00:00</lastmod> -->
+  <lastmod>2025-12-22</lastmod>
   <priority>0.64</priority>
   <changefreq>monthly</changefreq>
 </url>
